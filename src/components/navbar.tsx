@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { ThemeToggle } from "./theme-toggle"
+import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { label: "Pipeline", href: "#pipeline" },
   { label: "After Hours", href: "#after-hours" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export function Navbar() {
   return (
@@ -31,5 +31,7 @@ export function Navbar() {
         <ThemeToggle />
       </div>
     </nav>
-  )
+  );
 }
+
+export default Navbar;
