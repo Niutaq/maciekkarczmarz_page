@@ -13,8 +13,8 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20 pb-12">
       {/* Background ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute right-1/4 bottom-1/3 h-72 w-72 rounded-full bg-primary/15 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary/10 blur-[80px] md:h-96 md:w-96 md:blur-[120px]" />
+        <div className="absolute right-1/4 bottom-1/3 h-48 w-48 rounded-full bg-primary/15 blur-[60px] md:h-72 md:w-72 md:blur-[100px]" />
       </div>
 
       {/* Main Content - Centered */}
