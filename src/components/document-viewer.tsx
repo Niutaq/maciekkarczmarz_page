@@ -132,8 +132,8 @@ function ViewerCard({ doc, lang, t }: { doc: any; lang: "pl" | "en"; t: any }) {
             </p>
             <p className="text-xs text-muted-foreground/60 font-mono">
               {lang === "pl"
-                ? "Safari nie obsługuje podglądu PDF"
-                : "Safari does not support PDF preview"}
+                ? "Przeglądarki mobilne mogą nie wyświetlać podglądu PDF"
+                : "Mobile browsers may not support inline PDF preview"}
             </p>
           </div>
           <div className="flex flex-col gap-3 w-full max-w-xs">
