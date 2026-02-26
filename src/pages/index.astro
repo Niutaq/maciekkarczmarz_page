@@ -1,36 +1,70 @@
 ---
-import { Navbar } from "@/components/navbar";
-import { HeroSection } from "@/components/hero-section";
-import { PipelineSection } from "@/components/pipeline-section";
-import { AfterHoursSection } from "@/components/after-hours-section";
-import { ContactSection } from "@/components/contact-section";
-import { Footer } from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import PortfolioApp from "@/components/portfolio-app";
+import { Analytics } from "@vercel/analytics/react";
 
+import "@fontsource-variable/inter";
+import "@fontsource-variable/geist-mono";
 import "../styles/global.css";
 ---
 
-<html lang="pl">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
+        <script is:inline>
+            const getTheme = () => {
+                if (
+                    typeof localStorage !== "undefined" &&
+                    localStorage.getItem("portfolio-theme")
+                ) {
+                    return localStorage.getItem("portfolio-theme");
+                }
+                return window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+            };
+            const theme = getTheme();
+            if (theme === "light") {
+                document.documentElement.classList.remove("dark");
+            } else {
+                document.documentElement.classList.add("dark");
+            }
+        </script>
         <meta name="viewport" content="width=device-width" />
-        <title>Moje Portfolio</title>
+        <title>Maciej Karczmarz | Portfolio</title>
+        <meta
+            name="description"
+            content="Portfolio Macieja Karczmarza - Backend Developer (Go) & 3D Artist."
+        />
+        <meta name="generator" content="Astro" />
+
+        <!-- Icons -->
+        <link
+            rel="icon"
+            href="/icon-light-32x32.png"
+            media="(prefers-color-scheme: light)"
+        />
+        <link
+            rel="icon"
+            href="/icon-dark-32x32.png"
+            media="(prefers-color-scheme: dark)"
+        />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+
+        <!-- Viewport / Theme Color -->
+        <meta
+            name="theme-color"
+            content="#f5f5f5"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#1a1a1a"
+            media="(prefers-color-scheme: dark)"
+        />
     </head>
-    <body class="bg-slate-95000 text-white">
-        <ThemeProvider
-            client:load
-            defaultTheme="dark"
-            storageKey="vite-ui-theme"
-        >
-            <Navbar client:load />
-            <main>
-                {/* Zmieniono client:reveal na client:visible */}
-                <HeroSection client:visible />
-                <PipelineSection client:visible />
-                <AfterHoursSection client:visible />
-                <ContactSection client:visible />
-            </main>
-            <Footer />
-        </ThemeProvider>
+    <body class="bg-background text-foreground font-sans antialiased">
+        <PortfolioApp client:load />
+        <Analytics client:load />
     </body>
 </html>
