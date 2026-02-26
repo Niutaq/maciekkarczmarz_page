@@ -127,7 +127,7 @@ function ViewerCard({ doc, lang, t }: { doc: any; lang: "pl" | "en"; t: any }) {
           <div className="space-y-2">
             <p className="font-mono text-xs font-bold uppercase tracking-widest text-muted-foreground">
               {lang === "pl"
-                ? "Podgląd niedostępny na mobilnych"
+                ? "Podgląd niedostępny na urządzeniach mobilnych"
                 : "Preview unavailable on mobile"}
             </p>
             <p className="text-xs text-muted-foreground/60 font-mono">
