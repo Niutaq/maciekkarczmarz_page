@@ -2,12 +2,12 @@ import { Palette, ExternalLink } from "lucide-react";
 import { useLanguage } from "./language-provider";
 
 export function Graphics() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const mainProfile = {
     icon: Palette,
     title: {
-      pl: "Grafika 3D & Technical Art",
+      pl: "Grafika 3D (techniczna)",
       en: "3D Graphics & Technical Art",
     },
     description: {
@@ -15,13 +15,15 @@ export function Graphics() {
       en: "A comprehensive approach to 3D graphics. I specialize in modeling in Blender, building environments in Unreal Engine 5, and procedural terrain and asset generation using Gaea and Houdini. I use Substance 3D Painter for PBR texturing and material optimization. My work combines high visual quality with technical optimization (low-poly, LOD) for game engines. A full collection of my models and renders can be found on my ArtStation profile.",
     },
     link: "https://www.artstation.com/niutaq",
-    linkText: "ArtStation Profile",
+    linkText: {
+      pl: "Profil ArtStation",
+      en: "ArtStation Profile",
+    },
   };
 
-  const title =
-    typeof mainProfile.title === "string"
-      ? mainProfile.title
-      : mainProfile.title[language];
+  const currentTitle = mainProfile.title[language];
+  const currentDescription = mainProfile.description[language];
+  const currentLinkText = mainProfile.linkText[language];
 
   return (
     <section id="graphics" className="relative px-6 py-24 md:py-32">
@@ -29,15 +31,14 @@ export function Graphics() {
         <div className="mb-16 flex flex-col items-center text-center gap-4">
           <div className="flex items-center gap-3">
             <div className="h-px w-12 bg-primary/50" />
-            <span className="font-mono text-xs tracking-widest text-primary uppercase"></span>
+            <span className="font-mono text-xs tracking-widest text-primary uppercase">
+              Portfolio
+            </span>
             <div className="h-px w-12 bg-primary/50" />
           </div>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-            {t.graphics.title}
+            {language === "pl" ? "Realizacje Graficzne" : "Graphics Gallery"}
           </h2>
-          <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            {t.graphics.description}
-          </p>
         </div>
 
         <a
@@ -51,14 +52,14 @@ export function Graphics() {
           </div>
           <div className="flex flex-1 flex-col text-center md:text-left">
             <h3 className="mb-2 flex items-center justify-center md:justify-start gap-2 text-xl font-bold text-foreground">
-              {title}
+              {currentTitle}
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground mb-4">
-              {mainProfile.description[language]}
+              {currentDescription}
             </p>
             <div className="inline-flex items-center justify-center md:justify-start gap-2 font-mono text-xs font-bold text-primary">
               <ExternalLink className="h-4 w-4" />
-              {mainProfile.linkText}
+              {currentLinkText}
             </div>
           </div>
         </a>

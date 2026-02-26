@@ -2,7 +2,7 @@ import { ArrowDown, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "./language-provider";
 
 export function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -33,7 +33,9 @@ export function HeroSection() {
         <div className="flex flex-col items-center gap-2 text-muted-foreground">
           <div className="flex items-center justify-center gap-2">
             <MapPin className="h-4 w-4" />
-            <span>Stalowa Wola / Rzeszów, Polska</span>
+            <span>
+              Stalowa Wola / Rzeszów, {language === "pl" ? "Polska" : "Poland"}
+            </span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <Mail className="h-4 w-4" />
