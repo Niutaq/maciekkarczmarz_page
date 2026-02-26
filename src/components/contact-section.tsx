@@ -12,7 +12,7 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/maciej-karczmarz",
+    href: "https://www.linkedin.com/in/maciej-karczmarz-b5b444237",
     handle: "/maciej-karczmarz",
   },
   {

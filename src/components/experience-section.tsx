@@ -5,8 +5,8 @@ const experiences = [
   {
     type: "work",
     title: {
-      pl: "Artysta Techniczny",
-      en: "Technical Artist",
+      pl: "Grafik 3D",
+      en: "3D Artist",
     },
     company: {
       pl: "Simplicity Games",
@@ -41,8 +41,8 @@ const experiences = [
       en: "Faculty of Electrical and Computer Engineering",
     },
     period: {
-      pl: "Październik 2022 - Marzec 2026",
-      en: "October 2022 - March 2026",
+      pl: "Październik 2022 - Luty 2026",
+      en: "October 2022 - February 2026",
     },
     description: {
       pl: "Projekty w C++ (symulacje graficzne), analiza danych (Python, MATLAB, R), React, badania nad AI (MLP), udział w hackathonach.",

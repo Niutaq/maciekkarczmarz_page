@@ -33,8 +33,8 @@ const projects = [
     repo: "https://git.ugotit.pl/wegotit/smartoffer",
     image: "/ai-agent.png",
     description: {
-      pl: "Inteligentna witryna zintegrowana z agentem AI. Wykorzystuje n8n do automatyzacji procesów i analizy zapytań, hostowana w chmurze AWS z relacyjną bazą danych do zarządzania wiedzą.",
-      en: "Intelligent website integrated with an AI agent. Uses n8n for process automation and query analysis, hosted on AWS cloud with a relational database for knowledge management.",
+      pl: "System automatyzacji ofertowania dla AB Bechcicki. Transformuje zapytania w gotowe kosztorysy (Premium/Budżet), dobierając materiały według norm technicznych i parametrów, a nie tylko marki. Rozwiązanie oparte na architekturze RAG, workflow n8n oraz chmurze AWS, zapewniające bezbłędność skalowalność enterprise-grade.",
+      en: "Automation system for AB Bechcicki. It transforms inquiries into ready-to-use cost estimates (Premium/Budget) by selecting materials based on technical standards and parameters, not just brands. Built on RAG architecture, n8n workflows, and AWS, ensuring enterprise-grade scalability.",
     },
     tech: {
       pl: ["n8n", "AWS", "Baza Danych"],
@@ -43,7 +43,7 @@ const projects = [
   },
   {
     id: "grat",
-    label: "GRAT (JavaFX)",
+    label: "GRAT",
     icon: Globe,
     repo: "https://github.com/Niutaq/GRAT",
     image: "/grat.png",
@@ -58,7 +58,7 @@ const projects = [
   },
   {
     id: "grats",
-    label: "GRATS (C++, OpenGL)",
+    label: "GRATS",
     icon: Monitor,
     repo: "https://github.com/Niutaq/GRATS",
     image: "/grats.png",
