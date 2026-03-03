@@ -9,6 +9,8 @@ import { Graphics } from "@/components/graphics";
 import { DocumentViewer } from "@/components/document-viewer";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { BackgroundEffects } from "@/components/background-effects";
+import { CommandPalette } from "@/components/command-palette";
 
 function PortfolioApp() {
   return (
@@ -20,6 +22,7 @@ function PortfolioApp() {
         disableTransitionOnChange
         storageKey="portfolio-theme"
       >
+        <BackgroundEffects />
         <Navbar />
         <main>
           <HeroSection />
@@ -30,6 +33,7 @@ function PortfolioApp() {
           <ContactSection />
         </main>
         <Footer />
+        <CommandPalette />
       </ThemeProvider>
     </LanguageProvider>
   );

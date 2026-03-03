@@ -1,11 +1,11 @@
 import {
-  Cpu,
-  Globe,
-  Monitor,
-  Cloud,
+  Waves,
   ChevronRight,
-  Bot,
+  BrainCircuit,
   ExternalLink,
+  TrendingUp,
+  CloudSun,
+  Box,
 } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "./language-provider";
@@ -14,7 +14,7 @@ const projects = [
   {
     id: "gix",
     label: "Gix",
-    icon: Cloud,
+    icon: TrendingUp,
     repo: "https://github.com/Niutaq/Gix",
     image: "/gix.png",
     description: {
@@ -29,7 +29,7 @@ const projects = [
   {
     id: "ai-agent",
     label: "Witryna z Agentem AI",
-    icon: Bot,
+    icon: BrainCircuit,
     repo: "https://git.ugotit.pl/wegotit/smartoffer",
     image: "/ai-agent.png",
     description: {
@@ -44,7 +44,7 @@ const projects = [
   {
     id: "grat",
     label: "GRAT",
-    icon: Globe,
+    icon: CloudSun,
     repo: "https://github.com/Niutaq/GRAT",
     image: "/grat.png",
     description: {
@@ -59,7 +59,7 @@ const projects = [
   {
     id: "grats",
     label: "GRATS",
-    icon: Monitor,
+    icon: Box,
     repo: "https://github.com/Niutaq/GRATS",
     image: "/grats.png",
     description: {
@@ -74,7 +74,7 @@ const projects = [
   {
     id: "sand",
     label: "Sand-Simulation",
-    icon: Cpu,
+    icon: Waves,
     repo: "https://github.com/Niutaq/Sand-Simulation",
     image: "/sand.png",
     description: {
