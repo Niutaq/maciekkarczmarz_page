@@ -1,5 +1,6 @@
 import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 import { useLanguage } from "./language-provider";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -78,78 +79,97 @@ export function ExperienceSection() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="experience" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-16 flex flex-col items-center gap-4 text-center">
-          <div className="flex items-center gap-3">
-            <div className="h-px w-12 bg-primary/50" />
-            <span className="font-mono text-xs tracking-widest text-primary uppercase"></span>
-            <div className="h-px w-12 bg-primary/50" />
+    <section id="experience" className="relative px-6 py-32 md:py-48 overflow-hidden">
+      <div className="mx-auto max-w-5xl relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24 flex flex-col items-center gap-6 text-center"
+        >
+          <div className="glass fruit-border px-4 py-1.5 rounded-full shadow-lg">
+            <span className="font-mono text-[10px] tracking-[0.3em] text-primary font-black uppercase">
+              Career Path
+            </span>
           </div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-balance text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
             {t.experience.title}
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="space-y-8">
+        <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-border last:before:bottom-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
             >
-              <div className="absolute -left-2 top-2 h-4 w-4 rounded-full border-2 border-primary bg-background shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
+              {/* Dot */}
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-background shadow-xl z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform duration-500 group-hover:scale-125 glass-strong fruit-border">
+                <div className="h-2 w-2 rounded-full bg-primary glow-orange-sm animate-pulse" />
+              </div>
 
-              <div className="glass-strong clay rounded-3xl p-8 transition-all duration-300 hover:scale-[1.01] macos-shadow border border-white/5">
-                <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
-                  <div className="flex-1">
-                    <div className="mb-3 flex items-center gap-2 text-primary">
+              {/* Card */}
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-strong fruit-border rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 shadow-2xl group-hover:shadow-primary/10">
+                <div className="absolute inset-0 rounded-[2.5rem] glass-reflection opacity-10 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <div className="mb-4 flex items-center gap-3 text-primary">
+                    <div className="p-2 rounded-xl bg-primary/10">
                       {exp.type === "work" ? (
                         <Briefcase className="h-4 w-4" />
                       ) : (
                         <GraduationCap className="h-4 w-4" />
                       )}
-                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest">
-                        {exp.type === "work"
-                          ? t.experience.types.work
-                          : t.experience.types.education}
+                    </div>
+                    <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em] opacity-60">
+                      {exp.type === "work"
+                        ? t.experience.types.work
+                        : t.experience.types.education}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight mb-2">
+                    {exp.title[language]}
+                  </h3>
+                  
+                  <div className="flex flex-col gap-1 mb-6">
+                    <span className="text-lg font-bold text-primary italic">
+                      {exp.company[language]}
+                    </span>
+                    <div className="flex flex-wrap items-center gap-4 text-[10px] font-black font-mono uppercase tracking-widest text-muted-foreground/60">
+                      <span className="flex items-center gap-2">
+                        <Calendar className="h-3 w-3 text-primary" />
+                        {exp.period[language]}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <MapPin className="h-3 w-3 text-primary" />
+                        {exp.location[language]}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground">
-                      {exp.title[language]}
-                    </h3>
-                    <p className="text-lg font-medium text-primary/80 mt-1">
-                      {exp.company[language]}
-                    </p>
                   </div>
-                  <div className="flex flex-col gap-2 text-xs text-muted-foreground md:items-end font-mono">
-                    <div className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-lg">
-                      <Calendar className="h-3.5 w-3.5 text-primary" />
-                      {exp.period[language]}
-                    </div>
-                    <div className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-lg">
-                      <MapPin className="h-3.5 w-3.5 text-primary" />
-                      {exp.location[language]}
-                    </div>
-                  </div>
+
+                  <p className="leading-relaxed text-muted-foreground/80 font-light text-lg">
+                    {exp.description[language]}
+                  </p>
+
+                  {exp.link && (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-8 inline-flex items-center gap-3 rounded-full glass fruit-border px-6 py-2.5 text-[10px] font-black text-primary uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all group/btn"
+                    >
+                      {language === "pl" ? "Strona" : "Website"}
+                      <Briefcase className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
+                    </a>
+                  )}
                 </div>
-
-                <p className="mt-6 leading-relaxed text-muted-foreground text-pretty">
-                  {exp.description[language]}
-                </p>
-
-                {exp.link && (
-                  <a
-                    href={exp.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 text-[10px] font-bold text-primary uppercase tracking-widest hover:underline group"
-                  >
-                    {language === "pl" ? "Oficjalna Strona" : "Official Site"}
-                    <Briefcase className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                  </a>
-                )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

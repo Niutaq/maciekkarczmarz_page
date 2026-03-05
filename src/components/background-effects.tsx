@@ -1,90 +1,53 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
 
 export function BackgroundEffects() {
   const [mounted, setMounted] = useState(false);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
 
-  // Smooth out mouse movement
-  const springConfig = { damping: 25, stiffness: 150 };
+  const springConfig = { damping: 100, stiffness: 100 };
   const sx = useSpring(mouseX, springConfig);
   const sy = useSpring(mouseY, springConfig);
+
+  // Very subtle parallax - hardware accelerated
+  const x = useTransform(sx, [0, 1], ["-2%", "2%"]);
+  const y = useTransform(sy, [0, 1], ["-2%", "2%"]);
 
   useEffect(() => {
     setMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalize to -0.5 to 0.5
-      mouseX.set(e.clientX / window.innerWidth - 0.5);
-      mouseY.set(e.clientY / window.innerHeight - 0.5);
+      mouseX.set(e.clientX / window.innerWidth);
+      mouseY.set(e.clientY / window.innerHeight);
     };
-
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, []);
 
   if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Orb 1: Primary Orange */}
-      <motion.div
-        style={{
-          x: sx.get() * 50,
-          y: sy.get() * 50,
-        }}
-        animate={{
-          x: [0, 100, -50, 0],
-          y: [0, -50, 100, 0],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-primary/20 blur-[120px]"
-      />
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-background transform-gpu">
+      {/* 
+        Ultra-Performance "WebGL-style" Background 
+        Using large fixed radial gradients instead of multiple blur divs.
+        This is much easier on the GPU than CSS blurs.
+      */}
+      <motion.div 
+        style={{ x, y }}
+        className="absolute inset-[-10%] opacity-50 dark:opacity-30 will-change-transform"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,var(--color-primary)_0%,transparent_40%),radial-gradient(circle_at_20%_80%,var(--color-accent)_0%,transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,oklch(0.7_0.1_200/_0.1)_0%,transparent_60%)]" />
+      </motion.div>
 
-      {/* Orb 2: Secondary / Accent */}
-      <motion.div
-        style={{
-          x: sx.get() * -30,
-          y: sy.get() * -30,
-        }}
-        animate={{
-          x: [0, -150, 50, 0],
-          y: [0, 100, -80, 0],
-        }}
-        transition={{
-          duration: 35,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute bottom-[-15%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[100px]"
-      />
-
-      {/* Orb 3: Very Subtle Drift */}
-      <motion.div
-        style={{
-          x: sx.get() * 20,
-          y: sy.get() * 20,
-        }}
-        animate={{
-          x: [0, 50, -100, 0],
-          y: [0, 150, 50, 0],
-        }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-[30%] left-[20%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[150px]"
-      />
-
-      {/* Static Noise Overlay (Optional for extra WOW/texture) */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* Noise Texture Overlay - Refined */}
+      <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      
+      {/* Global Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_100%)]" />
     </div>
   );
 }
