@@ -63,7 +63,7 @@ export function Graphics() {
         >
           <h2 className="text-balance text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
             {language === "pl" ? "Realizacje" : "Visual"} <br />
-            <span className="text-muted-foreground/40">
+            <span className="bg-muted-foreground/40 bg-clip-text text-transparent">
               {language === "pl" ? "Graficzne" : "Graphics"}
             </span>
           </h2>

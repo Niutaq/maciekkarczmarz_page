@@ -11,7 +11,7 @@ export const translations = {
       status: "Witam!",
       subtitle: "Backend Developer & 3D Artist",
       description:
-        "Rozwijam umiejętności w programowaniu backendowym (Go) oraz optymalizacji zasobów 3D. Łączę analityczne podejście programisty z kreatywnością grafika.",
+        "Rozwijam umiejętności w programowaniu backendowym (Go) oraz optymalizacji zasobów 3D, kładąc nacisk na technologie chmurowe (Fin/Cloud Ops). Łączę analityczne podejście programisty z kreatywnością grafika.",
       cta_view_cv: "Podgląd CV",
       profile_code: {
         backend: "Backend",
@@ -65,7 +65,7 @@ export const translations = {
       status: "Welcome!",
       subtitle: "Backend Developer & 3D Artist",
       description:
-        "I develop skills in backend programming (Go) and 3D asset optimization. I combine a programmer's analytical approach with a graphic designer's creativity.",
+        "I develop skills in backend programming (Go) and 3D asset optimization, with a focus on cloud technologies (Fin/Cloud Ops). I combine a programmer's analytical approach with a graphic designer's creativity.",
       cta_view_cv: "View CV",
       profile_code: {
         backend: "Backend",

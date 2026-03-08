@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer";
 import { BackgroundEffects } from "@/components/background-effects";
 import { CommandPalette } from "@/components/command-palette";
 import { CustomCursor } from "@/components/custom-cursor";
+import { motion, AnimatePresence } from "framer-motion";
 
 function PortfolioApp() {
   return (
@@ -26,21 +27,29 @@ function PortfolioApp() {
         <BackgroundEffects />
         <CustomCursor />
         
-        {/* Awwwards Style Frame */}
-        <div className="fixed inset-0 z-[100] pointer-events-none border-[12px] md:border-[24px] border-background/20" />
-        <div className="fixed inset-0 z-[101] pointer-events-none border-[1px] border-white/10 m-[12px] md:m-[24px]" />
+        {/* Apple/Opal Style Frame - Ultra Minimal */}
+        <div className="fixed inset-0 z-[100] pointer-events-none border-[1px] border-white/5 m-4 md:m-8 rounded-[2rem] md:rounded-[3rem]" />
         
         <Navbar />
-        <main className="relative z-10 px-4 md:px-[60px] lg:px-[100px] pt-[80px]">
-          <div className="max-w-[1400px] mx-auto">
-            <HeroSection />
-            <PipelineSection />
-            <ExperienceSection />
-            <Graphics />
-            <DocumentViewer />
-            <ContactSection />
-          </div>
-        </main>
+        
+        <AnimatePresence mode="wait">
+          <motion.main 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="relative z-10 px-4 md:px-[60px] lg:px-[100px] pt-[120px]"
+          >
+            <div className="max-w-[1400px] mx-auto space-y-32 md:space-y-64">
+              <HeroSection />
+              <PipelineSection />
+              <ExperienceSection />
+              <Graphics />
+              <DocumentViewer />
+              <ContactSection />
+            </div>
+          </motion.main>
+        </AnimatePresence>
+
         <Footer />
         <CommandPalette />
       </ThemeProvider>

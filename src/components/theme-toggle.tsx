@@ -26,7 +26,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="glass clay rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:text-primary hover:glow-orange-sm"
+      className="glass clay rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:text-primary hover:glow-primary-sm"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? (

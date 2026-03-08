@@ -22,8 +22,8 @@ const projects = [
     repo: "https://github.com/Niutaq/Gix",
     image: "/gix.png",
     description: {
-      pl: "System monitorowania kursów walut w czasie rzeczywistym. Narzędzie agreguje dane z lokalnych punktów wymiany, dostarczając precyzyjne i bieżące informacje o rynku.",
-      en: "Real-time currency exchange monitoring system. The tool aggregates data from local exchange points, providing precise and up-to-date market information.",
+      pl: "System monitorowania kursów walut w czasie rzeczywistym. Narzędzie agreguje dane z lokalnych punktów wymiany, dostarczając precyzyjne i bieżące informacje o rynku. Projekt hostowany na Digital Ocean, zoptymalizowany pod kątem wydajności kosztowej zgodnie z zasadami FOCUS FinOps.",
+      en: "Real-time currency exchange monitoring system. The tool aggregates data from local exchange points, providing precise and up-to-date market information. Hosted on Digital Ocean and cost-optimized following FOCUS FinOps principles.",
     },
     tech: {
       pl: ["Go", "Monitoring na żywo", "FinTech"],
@@ -110,19 +110,17 @@ export function PipelineSection() {
   const active = projects.find((p) => p.id === activeId);
 
   return (
-    <section id="pipeline" className="relative px-6 py-32 md:py-48 overflow-hidden">
+    <section
+      id="pipeline"
+      className="relative px-6 py-32 md:py-48 overflow-hidden"
+    >
       <div className="mx-auto max-w-6xl relative">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-24 flex flex-col items-center gap-6 text-center"
         >
-          <div className="glass fruit-border px-4 py-1.5 rounded-full shadow-lg">
-            <span className="font-mono text-[10px] tracking-[0.3em] text-primary font-black uppercase">
-              Pipeline
-            </span>
-          </div>
           <h2 className="text-balance text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
             {t.projects.title}
           </h2>
@@ -137,8 +135,9 @@ export function PipelineSection() {
             {projects.map((project) => {
               const Icon = project.icon;
               const isActive = activeId === project.id;
-              const label = project.label[language as keyof typeof project.label];
-              
+              const label =
+                project.label[language as keyof typeof project.label];
+
               return (
                 <button
                   key={project.id}
@@ -192,7 +191,7 @@ export function PipelineSection() {
                   className="glass-strong fruit-border w-full rounded-[3rem] overflow-hidden shadow-2xl"
                 >
                   <div className="absolute inset-0 glass-reflection opacity-10 pointer-events-none" />
-                  
+
                   <a
                     href={active.repo}
                     target="_blank"
@@ -202,12 +201,15 @@ export function PipelineSection() {
                     <img
                       src={active.image}
                       alt={active.label[language as keyof typeof active.label]}
+                      loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 backdrop-blur-sm">
                       <div className="flex items-center gap-3 rounded-2xl bg-primary px-6 py-3 font-mono text-xs font-black text-white shadow-xl uppercase tracking-widest">
                         <ExternalLink className="h-4 w-4" />
-                        <span>{language === "pl" ? "Repozytorium" : "Repository"}</span>
+                        <span>
+                          {language === "pl" ? "Repozytorium" : "Repository"}
+                        </span>
                       </div>
                     </div>
                   </a>

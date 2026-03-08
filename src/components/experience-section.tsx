@@ -79,19 +79,17 @@ export function ExperienceSection() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="experience" className="relative px-6 py-32 md:py-48 overflow-hidden">
+    <section
+      id="experience"
+      className="relative px-6 py-32 md:py-48 overflow-hidden"
+    >
       <div className="mx-auto max-w-5xl relative">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-24 flex flex-col items-center gap-6 text-center"
         >
-          <div className="glass fruit-border px-4 py-1.5 rounded-full shadow-lg">
-            <span className="font-mono text-[10px] tracking-[0.3em] text-primary font-black uppercase">
-              Career Path
-            </span>
-          </div>
           <h2 className="text-balance text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
             {t.experience.title}
           </h2>
@@ -109,13 +107,13 @@ export function ExperienceSection() {
             >
               {/* Dot */}
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-background shadow-xl z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform duration-500 group-hover:scale-125 glass-strong fruit-border">
-                <div className="h-2 w-2 rounded-full bg-primary glow-orange-sm animate-pulse" />
+                <div className="h-2 w-2 rounded-full bg-primary glow-primary-sm animate-pulse" />
               </div>
 
               {/* Card */}
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-strong fruit-border rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 shadow-2xl group-hover:shadow-primary/10">
                 <div className="absolute inset-0 rounded-[2.5rem] glass-reflection opacity-10 pointer-events-none" />
-                
+
                 <div className="relative z-10">
                   <div className="mb-4 flex items-center gap-3 text-primary">
                     <div className="p-2 rounded-xl bg-primary/10">
@@ -135,7 +133,7 @@ export function ExperienceSection() {
                   <h3 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight mb-2">
                     {exp.title[language]}
                   </h3>
-                  
+
                   <div className="flex flex-col gap-1 mb-6">
                     <span className="text-lg font-bold text-primary italic">
                       {exp.company[language]}

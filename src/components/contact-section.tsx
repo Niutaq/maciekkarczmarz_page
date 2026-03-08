@@ -62,7 +62,7 @@ export function ContactSection() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass clay group flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:glow-orange-sm hover:scale-[1.02] macos-shadow border border-white/5 w-full text-left"
+                className="glass clay group flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:glow-primary-sm hover:scale-[1.02] macos-shadow border border-white/5 w-full text-left"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon className="h-5 w-5" />
@@ -82,7 +82,7 @@ export function ContactSection() {
 
           <a
             href="mailto:maciekkar1305@gmail.com"
-            className="glass clay group mt-2 flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:glow-orange-sm hover:scale-[1.02] macos-shadow border border-white/5 w-full text-left bg-primary/5"
+            className="glass clay group mt-2 flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:glow-primary-sm hover:scale-[1.02] macos-shadow border border-white/5 w-full text-left bg-primary/5"
           >
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
               <Send className="h-5 w-5" />

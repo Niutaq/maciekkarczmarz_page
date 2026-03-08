@@ -127,6 +127,7 @@ function ViewerCard({
             href={doc.files[lang]}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={lang === "pl" ? "Otwórz dokument w nowym oknie" : "Open document in new window"}
             className="p-2 rounded-full hover:bg-white/5 text-muted-foreground transition-colors hover:text-foreground"
           >
             <ExternalLink className="h-4 w-4" />

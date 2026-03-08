@@ -43,21 +43,6 @@ export function HeroSection() {
 
   return (
     <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden px-6 pt-20 pb-12">
-      {/* Sharp SVG Accents - "Fruit Era" Mesh */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg
-          className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] opacity-20 dark:opacity-10 blur-3xl animate-pulse"
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="var(--color-primary)"
-            d="M44.7,-76.4C58.2,-69.2,69.7,-57.4,77.3,-43.8C84.8,-30.1,88.5,-15.1,87.6,-0.5C86.7,14,81.2,28,73,40.5C64.8,53,53.8,64,40.7,71.5C27.5,79,12.2,83, -2.4,87.1C-17,91.3,-34.1,95.5,-48.1,90.2C-62.1,84.8,-73.1,69.9,-80.4,54.2C-87.7,38.5,-91.3,22.1,-90.1,6.4C-88.9,-9.2,-83,-24.1,-74.6,-37.2C-66.2,-50.2,-55.4,-61.4,-42.6,-68.9C-29.8,-76.4,-14.9,-80.1,0.7,-81.4C16.4,-82.6,31.2,-83.5,44.7,-76.4Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-      </div>
-
       {/* Main Content */}
       <motion.div 
         variants={containerVariants}
@@ -68,7 +53,7 @@ export function HeroSection() {
         {/* Status Badge */}
         <motion.div variants={fadeVariants} className="overflow-hidden">
           <div className="glass-strong fruit-border rounded-full px-6 py-2 flex items-center gap-3 shadow-2xl backdrop-blur-2xl">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-primary glow-orange-sm" />
+            <div className="h-2 w-2 animate-pulse rounded-full bg-primary glow-primary-sm" />
             <span className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-foreground font-black uppercase">
               {t.hero.status}
             </span>
@@ -123,7 +108,7 @@ export function HeroSection() {
           onClick={() => scrollTo("pipeline")}
           className="group flex flex-col items-center gap-4 text-muted-foreground transition-all duration-700"
         >
-          <div className="relative flex items-center justify-center h-16 w-16 rounded-full border border-white/5 glass-strong fruit-border transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(var(--color-primary),0.2)]">
+          <div className="relative flex items-center justify-center h-16 w-16 rounded-full border border-white/5 glass-strong fruit-border transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(var(--primary),0.2)]">
             <ArrowDown className="h-5 w-5 animate-bounce" />
             <div className="absolute inset-0 rounded-full glass-reflection opacity-20 pointer-events-none" />
           </div>

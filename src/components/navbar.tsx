@@ -25,10 +25,11 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-6 right-0 left-0 z-[110] flex items-center justify-between px-6 md:px-[80px] lg:px-[120px] pointer-events-none">
+    <nav className="fixed top-4 md:top-8 left-4 md:left-8 right-4 md:right-8 z-[110] flex items-center justify-between px-2 md:px-8 pointer-events-none">
       <div className="pointer-events-auto">
         <a
-          href="#"
+          href="/"
+          aria-label="Home - Maciej Karczmarz"
           className="group relative flex items-center justify-center h-10 w-10 rounded-xl glass-strong fruit-border transition-transform hover:scale-110 active:scale-95 shadow-lg"
         >
           <span className="font-mono text-sm font-black tracking-tighter text-foreground">
