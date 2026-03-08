@@ -57,7 +57,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[280px] sm:w-[350px] glass-strong border-l border-white/10 p-6 flex flex-col gap-8"
+              className="w-full sm:w-[350px] glass-strong border-l border-white/10 p-6 flex flex-col gap-8 z-[150]"
             >
               <SheetHeader className="p-0">
                 <SheetTitle className="text-left font-mono text-sm font-bold tracking-tighter text-muted-foreground uppercase">

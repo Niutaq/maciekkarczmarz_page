@@ -61,13 +61,13 @@ export function HeroSection() {
         </motion.div>
 
         {/* Headline with Smooth Reveal */}
-        <div className="space-y-2 md:space-y-4 overflow-hidden">
+        <div className="space-y-1 md:space-y-4 overflow-hidden">
           <motion.h1 
             variants={textVariants}
-            className="text-balance text-7xl md:text-[10rem] font-black tracking-tighter text-foreground uppercase leading-[0.8] md:leading-[0.8]"
+            className="text-balance text-5xl sm:text-6xl md:text-[10rem] font-black tracking-tighter text-foreground uppercase leading-[0.9] md:leading-[0.8]"
           >
             Maciej <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary/80 to-accent vista-glow py-2">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary/80 to-accent vista-glow py-2 inline-block">
               Karczmarz
             </span>
           </motion.h1>
@@ -76,22 +76,22 @@ export function HeroSection() {
         {/* Info Pills */}
         <motion.div 
           variants={fadeVariants}
-          className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-muted-foreground/80 font-mono text-[10px] md:text-xs tracking-[0.1em] font-black uppercase"
+          className="flex flex-col sm:flex-row items-center gap-3 md:gap-8 text-muted-foreground/80 font-mono text-[9px] md:text-xs tracking-[0.1em] font-black uppercase"
         >
-          <div className="flex items-center gap-3 px-6 py-3 rounded-2xl glass fruit-border shadow-lg group hover:scale-105 transition-transform">
-            <MapPin className="h-3.5 w-3.5 text-primary" />
+          <div className="flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-2xl glass fruit-border shadow-lg group hover:scale-105 transition-transform">
+            <MapPin className="h-3 w-3.5 text-primary" />
             <span>{language === "pl" ? "Polska" : "Poland"}</span>
           </div>
-          <div className="flex items-center gap-3 px-6 py-3 rounded-2xl glass fruit-border shadow-lg group hover:scale-105 transition-transform">
-            <Mail className="h-3.5 w-3.5 text-primary" />
-            <span>maciekkar1305@gmail.com</span>
+          <div className="flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-2xl glass fruit-border shadow-lg group hover:scale-105 transition-transform">
+            <Mail className="h-3 w-3.5 text-primary" />
+            <span className="truncate max-w-[200px] sm:max-w-none">maciekkar1305@gmail.com</span>
           </div>
         </motion.div>
 
         {/* Cozy Description */}
         <motion.p 
           variants={fadeVariants}
-          className="max-w-2xl text-pretty text-xl md:text-2xl font-light leading-relaxed text-muted-foreground/60 mx-auto px-4"
+          className="max-w-2xl text-pretty text-lg md:text-2xl font-light leading-relaxed text-muted-foreground/60 mx-auto px-4"
         >
           {t.hero.description}
         </motion.p>
@@ -102,14 +102,14 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-16 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 md:bottom-16 left-1/2 -translate-x-1/2"
       >
         <button
           onClick={() => scrollTo("pipeline")}
           className="group flex flex-col items-center gap-4 text-muted-foreground transition-all duration-700"
         >
-          <div className="relative flex items-center justify-center h-16 w-16 rounded-full border border-white/5 glass-strong fruit-border transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(var(--primary),0.2)]">
-            <ArrowDown className="h-5 w-5 animate-bounce" />
+          <div className="relative flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full border border-white/5 glass-strong fruit-border transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(var(--primary),0.2)]">
+            <ArrowDown className="h-4 w-4 md:h-5 md:w-5 animate-bounce" />
             <div className="absolute inset-0 rounded-full glass-reflection opacity-20 pointer-events-none" />
           </div>
         </button>

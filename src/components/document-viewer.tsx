@@ -23,20 +23,20 @@ export function DocumentViewer() {
 
         <Tabs defaultValue="cv" className="w-full">
           <div className="mb-12 flex flex-col items-center justify-center gap-8">
-            <TabsList className="glass-strong fruit-border h-auto rounded-[2rem] p-2 shadow-2xl">
+            <TabsList className="glass-strong fruit-border h-auto rounded-[1.5rem] md:rounded-[2rem] p-1 md:p-2 shadow-2xl">
               <TabsTrigger
                 value="cv"
-                className="rounded-[1.5rem] px-10 py-4 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all"
+                className="rounded-[1.2rem] md:rounded-[1.5rem] px-4 md:px-10 py-3 md:py-4 text-[9px] md:text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all"
               >
-                <FileText className="mr-3 h-4 w-4" />
-                Curriculum Vitae
+                <FileText className="mr-2 md:mr-3 h-3.5 w-3.5 md:h-4 md:w-4" />
+                CV
               </TabsTrigger>
               <TabsTrigger
                 value="thesis"
-                className="rounded-[1.5rem] px-10 py-4 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all"
+                className="rounded-[1.2rem] md:rounded-[1.5rem] px-4 md:px-10 py-3 md:py-4 text-[9px] md:text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg transition-all"
               >
-                <ShieldCheck className="mr-3 h-4 w-4" />
-                {language === "pl" ? "Praca Inżynierska" : "Thesis Project"}
+                <ShieldCheck className="mr-2 md:mr-3 h-3.5 w-3.5 md:h-4 md:w-4" />
+                {language === "pl" ? "Praca Inż." : "Thesis"}
               </TabsTrigger>
             </TabsList>
           </div>

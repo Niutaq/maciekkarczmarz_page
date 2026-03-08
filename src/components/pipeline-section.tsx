@@ -121,7 +121,7 @@ export function PipelineSection() {
           viewport={{ once: true }}
           className="mb-24 flex flex-col items-center gap-6 text-center"
         >
-          <h2 className="text-balance text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
+          <h2 className="text-balance text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter text-foreground uppercase">
             {t.projects.title}
           </h2>
           <p className="max-w-2xl text-pretty text-lg font-light leading-relaxed text-muted-foreground/70">
