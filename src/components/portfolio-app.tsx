@@ -15,18 +15,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function PortfolioContent() {
   const { language } = useLanguage();
-  
+
   return (
     <>
       <CustomCursor />
-      
+
       {/* Apple/Opal Style Frame - Ultra Minimal */}
       <div className="fixed inset-0 z-[100] pointer-events-none border-[1px] border-white/5 m-4 md:m-8 rounded-[2rem] md:rounded-[3rem]" />
-      
+
       <Navbar />
-      
+
       <AnimatePresence mode="wait">
-        <motion.main 
+        <motion.main
           key={language}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

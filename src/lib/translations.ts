@@ -9,9 +9,8 @@ export const translations = {
     },
     hero: {
       status: "Cześć!",
-      subtitle: "Backend Developer & 3D Artist",
       description:
-        "Specjalizuję się w tworzeniu wydajnych systemów w języku Go oraz optymalizacji zasobów 3D pod kątem silników gier i chmury (FinOps).",
+        "Specjalizuję się w tworzeniu wydajnych systemów w języku Go oraz optymalizacji zasobów 3D pod kątem silników graficznych i optymalizacją chmury (FinOps).",
       cta_view_cv: "Zobacz CV",
       profile_code: {
         backend: "Backend",
