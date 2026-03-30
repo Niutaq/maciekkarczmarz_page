@@ -1,36 +1,27 @@
-"use client";
+import { motion } from 'framer-motion';
+import { useLanguage } from './language-provider';
 
-import { useLanguage } from "./language-provider";
-import { motion } from "framer-motion";
-
-export function HeroSection() {
+export const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-6 pt-32 pb-20">
-      {/* Main Content */}
-      <motion.div 
+    <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-6">
+      <motion.div
         initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 1.5 }}
-        className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center"
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center"
       >
-        {/* Editorial Tagline */}
-        <span className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase opacity-50 mb-12 block">
-          FinOps Architect / Digital Ocean Specialist
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6 block">
+          {t.hero.subtitle}
         </span>
-
-        {/* Headline with Editorial Serif Style */}
-        <h1 className="font-serif text-7xl md:text-9xl italic leading-tight text-foreground text-balance">
-          The Golden <br />
-          <span className="text-[var(--primary)]">Current</span>
+        <h1 className="text-7xl md:text-9xl font-serif italic leading-[1.05] tracking-tighter">
+          Maciej <br /> <span className="text-primary">Karczmarz</span>
         </h1>
-
-        {/* Airy Description */}
-        <p className="mt-16 max-w-2xl text-pretty text-lg md:text-2xl font-serif font-light leading-relaxed opacity-60 px-4">
+        <p className="mt-12 max-w-xl mx-auto font-sans text-lg md:text-xl opacity-60 font-light leading-relaxed tracking-wide">
           {t.hero.description}
         </p>
       </motion.div>
     </section>
   );
-}
+};

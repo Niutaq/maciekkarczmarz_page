@@ -5,42 +5,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(0.12 0.02 50);
-    --foreground: oklch(0.95 0.01 50);
-    --card: oklch(0.15 0.02 50 / 0.7);
-    --card-foreground: oklch(0.95 0.01 50);
-    --popover: oklch(0.12 0.02 50 / 0.85);
-    --popover-foreground: oklch(0.95 0.01 50);
-    --primary: oklch(0.75 0.15 50);
-    --primary-foreground: oklch(0.12 0.02 50);
-    --secondary: oklch(0.2 0.02 50 / 0.6);
-    --secondary-foreground: oklch(0.9 0.02 50);
-    --muted: oklch(0.18 0.02 50);
-    --muted-foreground: oklch(0.7 0.02 50);
-    --accent: oklch(0.85 0.12 60);
-    --accent-foreground: oklch(0.12 0.02 50);
+    /* Light Mode: Amber Essence (Creme & Gold) */
+    --background: oklch(0.98 0.01 50);
+    --foreground: oklch(0.25 0.02 50);
+    --card: oklch(1 0 0 / 0.7);
+    --card-foreground: oklch(0.25 0.02 50);
+    --popover: oklch(0.98 0.01 50 / 0.85);
+    --popover-foreground: oklch(0.25 0.02 50);
+    --primary: oklch(0.72 0.16 50);
+    --primary-foreground: oklch(0.98 0.01 50);
+    --secondary: oklch(0.92 0.03 55 / 0.6);
+    --secondary-foreground: oklch(0.3 0.05 55);
+    --muted: oklch(0.94 0.02 55);
+    --muted-foreground: oklch(0.45 0.03 55);
+    --accent: oklch(0.45 0.1 40);
+    --accent-foreground: oklch(0.98 0.01 50);
     --destructive: oklch(0.55 0.2 25);
     --destructive-foreground: oklch(0.98 0.01 50);
-    --border: oklch(0.25 0.02 50 / 0.4);
-    --input: oklch(0.25 0.02 50 / 0.4);
-    --ring: oklch(0.75 0.15 50);
+    --border: oklch(0.85 0.02 55 / 0.5);
+    --input: oklch(0.9 0.02 55 / 0.5);
+    --ring: oklch(0.72 0.16 50);
     --radius: 1.5rem;
-    --glass: oklch(1 0 0 / 0.03);
-    --glass-border: oklch(1 0 0 / 0.1);
-    --glass-highlight: oklch(1 0 0 / 0.15);
-    --glow: oklch(0.75 0.15 50 / 0.4);
-    --surface: oklch(0.16 0.03 50 / 0.6);
+    --glass: oklch(1 0 0 / 0.05);
+    --glass-border: oklch(0.25 0.02 50 / 0.1);
+    --glass-highlight: oklch(1 0 0 / 0.3);
+    --glow: oklch(0.72 0.16 50 / 0.3);
+    --surface: oklch(1 0 0 / 0.7);
 }
 
-/* Forcing Dark Palette as Default for Golden Current */
-.dark, :root {
+.dark {
+    /* Dark Mode: Liquid Obsidian & Amber Flux */
     --background: oklch(0.12 0.02 50);
     --foreground: oklch(0.95 0.01 50);
     --card: oklch(0.15 0.02 50 / 0.7);
     --card-foreground: oklch(0.95 0.01 50);
     --popover: oklch(0.12 0.02 50 / 0.85);
     --popover-foreground: oklch(0.95 0.01 50);
-    --primary: oklch(0.75 0.15 50);
+    --primary: oklch(0.8 0.16 60);
     --primary-foreground: oklch(0.12 0.02 50);
     --secondary: oklch(0.2 0.02 50 / 0.6);
     --secondary-foreground: oklch(0.9 0.02 50);
@@ -50,11 +51,11 @@
     --accent-foreground: oklch(0.12 0.02 50);
     --border: oklch(0.25 0.02 50 / 0.4);
     --input: oklch(0.25 0.02 50 / 0.4);
-    --ring: oklch(0.75 0.15 50);
+    --ring: oklch(0.8 0.16 60);
     --glass: oklch(1 0 0 / 0.03);
     --glass-border: oklch(1 0 0 / 0.1);
     --glass-highlight: oklch(1 0 0 / 0.15);
-    --glow: oklch(0.75 0.15 50 / 0.35);
+    --glow: oklch(0.8 0.16 60 / 0.35);
     --surface: oklch(0.16 0.03 50 / 0.6);
 }
 
@@ -238,5 +239,9 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+
+    .mix-blend-amber {
+        mix-blend-mode: difference;
     }
 }
