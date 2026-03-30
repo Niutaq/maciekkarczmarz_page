@@ -1,5 +1,6 @@
 ---
 import PortfolioApp from "@/components/portfolio-app";
+import { LiquidBackground } from "@/components/liquid-background";
 import { Analytics } from "@vercel/analytics/react";
 
 import "@fontsource/geist-sans";
@@ -64,6 +65,7 @@ import "../styles/global.css";
         />
     </head>
     <body class="bg-background text-foreground font-sans antialiased">
+        <LiquidBackground client:load />
         <PortfolioApp client:load />
         <Analytics client:idle />
     </body>

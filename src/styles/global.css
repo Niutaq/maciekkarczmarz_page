@@ -59,7 +59,7 @@
 }
 
 @theme {
-    --font-sans: "Geist Sans", "Geist Fallback", sans-serif;
+    --font-sans: "Geist", "Geist Fallback", sans-serif;
     --font-serif: "Cormorant Garamond", serif;
     --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
     
