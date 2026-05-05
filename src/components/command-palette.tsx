@@ -10,30 +10,27 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { 
-  Search, 
-  LayoutGrid, 
-  Palette, 
-  Briefcase, 
-  FileText, 
+import {
+  Briefcase,
+  FileText,
+  GraduationCap,
+  Layers3,
+  LayoutGrid,
   Mail,
-  Moon,
-  Sun,
-  Languages
+  Network,
+  Search,
 } from "lucide-react";
 import { useLanguage } from "./language-provider";
-import { useTheme } from "next-themes";
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
-  const { theme, setTheme } = useTheme();
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setOpen((open) => !open);
+        setOpen((value) => !value);
       }
     };
     document.addEventListener("keydown", down);
@@ -45,70 +42,80 @@ export function CommandPalette() {
     command();
   };
 
+  const goTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <button
         onClick={() => setOpen(true)}
         aria-label="Open Command Palette"
-        className="fixed bottom-10 right-10 md:bottom-14 md:right-14 z-40 flex h-12 w-12 items-center justify-center rounded-2xl glass-strong clay macos-shadow transition-all duration-300 hover:scale-110 hover:glow-primary-sm"
+        className="command-trigger"
       >
-        <Search className="h-5 w-5 text-muted-foreground" />
-        <span className="sr-only">Press Ctrl+K to open</span>
+        <Search className="h-4 w-4" />
+        <span>Ctrl K</span>
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder={language === "pl" ? "Czego szukasz?..." : "Type a command or search..."} />
-        <CommandList className="glass-strong border-white/10">
+        <CommandInput placeholder={language === "pl" ? "Szukaj sekcji..." : "Search sections..."} />
+        <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          
+
           <CommandGroup heading={language === "pl" ? "Nawigacja" : "Navigation"}>
-            <CommandItem onSelect={() => runCommand(() => {
-              const el = document.getElementById("pipeline");
-              el?.scrollIntoView({ behavior: "smooth" });
-            })}>
+            <CommandItem onSelect={() => runCommand(() => goTo("bridge"))}>
+              <Network className="mr-2 h-4 w-4" />
+              <span>{t.nav.bridge}</span>
+            </CommandItem>
+            <CommandItem onSelect={() => runCommand(() => goTo("pipeline"))}>
               <LayoutGrid className="mr-2 h-4 w-4" />
               <span>{t.nav.projects}</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => {
-              const el = document.getElementById("graphics");
-              el?.scrollIntoView({ behavior: "smooth" });
-            })}>
-              <Palette className="mr-2 h-4 w-4" />
+            <CommandItem onSelect={() => runCommand(() => goTo("graphics"))}>
+              <Layers3 className="mr-2 h-4 w-4" />
               <span>{t.nav.graphics}</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => {
-              const el = document.getElementById("experience");
-              el?.scrollIntoView({ behavior: "smooth" });
-            })}>
+            <CommandItem onSelect={() => runCommand(() => goTo("experience"))}>
               <Briefcase className="mr-2 h-4 w-4" />
               <span>{t.nav.experience}</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => {
-              const el = document.getElementById("cv");
-              el?.scrollIntoView({ behavior: "smooth" });
-            })}>
+            <CommandItem onSelect={() => runCommand(() => goTo("education"))}>
+              <GraduationCap className="mr-2 h-4 w-4" />
+              <span>{t.nav.education}</span>
+            </CommandItem>
+            <CommandItem onSelect={() => runCommand(() => goTo("cv"))}>
               <FileText className="mr-2 h-4 w-4" />
               <span>{t.nav.documents}</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => {
-              const el = document.getElementById("contact");
-              el?.scrollIntoView({ behavior: "smooth" });
-            })}>
+            <CommandItem onSelect={() => runCommand(() => goTo("contact"))}>
               <Mail className="mr-2 h-4 w-4" />
               <span>{t.nav.contact}</span>
             </CommandItem>
           </CommandGroup>
-          
+
           <CommandSeparator />
-          
-          <CommandGroup heading={language === "pl" ? "Ustawienia" : "Settings"}>
-            <CommandItem onSelect={() => runCommand(() => setTheme(theme === "dark" ? "light" : "dark"))}>
-              {theme === "dark" ? <Sun className="mr-2 h-4 w-4" /> : <Moon className="mr-2 h-4 w-4" />}
-              <span>{language === "pl" ? "Przełącz motyw" : "Toggle Theme"}</span>
+
+          <CommandGroup heading={language === "pl" ? "Dokumenty" : "Documents"}>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => {
+                  window.open(language === "pl" ? "/cv-polskie.pdf" : "/cv-english.pdf", "_blank");
+                })
+              }
+            >
+              <FileText className="mr-2 h-4 w-4" />
+              <span>{t.documents.cv_title}</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setLanguage(language === "pl" ? "en" : "pl"))}>
-              <Languages className="mr-2 h-4 w-4" />
-              <span>{language === "pl" ? "Switch to English" : "Zmień na polski"}</span>
+            <CommandItem
+              onSelect={() =>
+                runCommand(() => {
+                  window.location.href = `mailto:${t.contact.email}`;
+                })
+              }
+            >
+              <Mail className="mr-2 h-4 w-4" />
+              <span>{t.contact.email}</span>
             </CommandItem>
           </CommandGroup>
         </CommandList>

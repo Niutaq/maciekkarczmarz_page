@@ -1,167 +1,167 @@
 import {
-  Waves,
+  ArrowUpRight,
   BrainCircuit,
-  TrendingUp,
   CloudSun,
-  Box,
   Github,
+  MonitorUp,
+  Route,
+  Waves,
 } from "lucide-react";
+import type { ElementType } from "react";
 import { useLanguage } from "./language-provider";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 export function PipelineSection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const projects = [
     {
       id: "gix",
-      icon: TrendingUp,
       repo: "https://github.com/Niutaq/Gix",
       image: "/gix.png",
+      icon: MonitorUp,
       data: t.projects_items.gix,
     },
     {
-      id: "ai-agent",
-      icon: BrainCircuit,
+      id: "smartoffer",
       repo: "https://git.ugotit.pl/wegotit/smartoffer",
       image: "/ai-agent.png",
+      icon: BrainCircuit,
       data: t.projects_items.ai_agent,
     },
     {
-      id: "grat",
-      icon: CloudSun,
-      repo: "https://github.com/Niutaq/GRAT",
-      image: "/grat.png",
-      data: t.projects_items.grat,
-    },
-    {
       id: "grats",
-      icon: Box,
       repo: "https://github.com/Niutaq/GRATS",
       image: "/grats.png",
+      icon: Route,
       data: t.projects_items.grats,
     },
     {
       id: "sand",
-      icon: Waves,
       repo: "https://github.com/Niutaq/Sand-Simulation",
       image: "/sand.png",
+      icon: Waves,
       data: t.projects_items.sand,
+    },
+    {
+      id: "grat",
+      repo: "https://github.com/Niutaq/GRAT",
+      image: "/grat.png",
+      icon: CloudSun,
+      data: t.projects_items.grat,
     },
   ];
 
   return (
-    <section
-      id="pipeline"
-      className="relative px-6 py-32 md:py-48 overflow-hidden"
-    >
-      <div className="mx-auto max-w-7xl relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24 flex flex-col items-center gap-6 text-center"
-        >
-          <h2 className="text-balance text-5xl md:text-8xl font-black tracking-tighter text-foreground uppercase">
-            {t.projects.title}
-          </h2>
-          <p className="max-w-2xl text-pretty text-lg font-light leading-relaxed text-muted-foreground/70">
-            {t.projects.description}
-          </p>
-        </motion.div>
+    <section id="pipeline" className="section-shell">
+      <div className="section-heading section-heading-wide">
+        <p className="eyebrow">{t.projects.eyebrow}</p>
+        <h2>{t.projects.title}</h2>
+        <p>{t.projects.description}</p>
+      </div>
 
-        <div
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
-          style={{ perspective: 1000 }}
-        >
-          {projects.map((project, index) => {
-            const Icon = project.icon;
-
-            return (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{
-                  scale: 1.02,
-                  rotateY: 5,
-                  rotateX: -2,
-                  transition: { duration: 0.3 },
-                }}
-                className={cn(
-                  "relative group",
-                  index === 0
-                    ? "md:col-span-8"
-                    : index === 1
-                      ? "md:col-span-4"
-                      : "md:col-span-4",
-                )}
-              >
-                <div className="h-full backdrop-blur-2xl bg-[var(--surface)] border border-[var(--border)] rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group-hover:shadow-primary/10 relative flex flex-col">
-                  {/* Image Container */}
-                  <div className="relative aspect-video overflow-hidden border-b border-[var(--border)]">
-                    <img
-                      src={project.image}
-                      alt={project.data.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface)] to-transparent opacity-40" />
-                  </div>
-
-                  <div className="p-8 md:p-10 flex flex-col flex-1">
-                    <div className="mb-6 flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                          <Icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <h3 className="text-3xl font-serif italic text-foreground">
-                          {project.data.title}
-                        </h3>
-                      </div>
-                      <div className="hidden sm:flex flex-col items-end font-mono text-[8px] opacity-30 uppercase tracking-[0.2em]">
-                        <span>Project ID: {project.id}</span>
-                      </div>
-                    </div>
-
-                    <p className="mb-8 text-lg font-light leading-relaxed text-muted-foreground/80 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
-                      {project.data.desc}
-                    </p>
-
-                    <div className="mt-auto flex flex-col gap-8">
-                      <div className="flex flex-wrap gap-2">
-                        {project.data.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="backdrop-blur-xl bg-primary/5 border border-primary/10 rounded-lg px-3 py-1.5 font-mono text-[10px] font-black text-primary uppercase tracking-[0.2em]"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex items-center gap-4">
-                        <a
-                          href={project.repo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 rounded-full backdrop-blur-xl bg-primary/10 border border-primary/20 px-6 py-2.5 text-[10px] font-black text-primary uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all group/btn"
-                        >
-                          <Github className="h-3.5 w-3.5" />
-                          <span>{t.projects.repo_btn}</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+      <div className="project-grid">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={index}
+            labels={{
+              role: t.projects.role_label,
+              constraint: t.projects.constraint_label,
+              why: t.projects.why_label,
+              stack: t.projects.stack_label,
+              repo: t.projects.repo_btn,
+            }}
+          />
+        ))}
       </div>
     </section>
+  );
+}
+
+function ProjectCard({
+  project,
+  index,
+  labels,
+}: {
+  project: {
+    id: string;
+    repo: string;
+    image: string;
+    icon: ElementType;
+    data: {
+      title: string;
+      role: string;
+      constraint: string;
+      desc: string;
+      impact: string;
+      tech: string[];
+    };
+  };
+  index: number;
+  labels: {
+    role: string;
+    constraint: string;
+    why: string;
+    stack: string;
+    repo: string;
+  };
+}) {
+  const Icon = project.icon;
+
+  return (
+    <article
+      className={index < 2 ? "project-card project-card-featured" : "project-card"}
+    >
+      <div className="project-media">
+        <img src={project.image} alt={project.data.title} loading="lazy" />
+      </div>
+
+      <div className="project-body">
+        <div className="project-title-row">
+          <div className="project-icon">
+            <Icon className="h-5 w-5" />
+          </div>
+          <div>
+            <p className="project-id">Project / {project.id}</p>
+            <h3>{project.data.title}</h3>
+          </div>
+        </div>
+
+        <p className="project-desc">{project.data.desc}</p>
+
+        <dl className="project-facts">
+          <div>
+            <dt>{labels.role}</dt>
+            <dd>{project.data.role}</dd>
+          </div>
+          <div>
+            <dt>{labels.constraint}</dt>
+            <dd>{project.data.constraint}</dd>
+          </div>
+          <div>
+            <dt>{labels.why}</dt>
+            <dd>{project.data.impact}</dd>
+          </div>
+        </dl>
+
+        <div className="project-footer">
+          <div>
+            <p className="project-stack-label">{labels.stack}</p>
+            <div className="project-stack">
+              {project.data.tech.map((tech) => (
+                <span key={tech}>{tech}</span>
+              ))}
+            </div>
+          </div>
+
+          <a href={project.repo} target="_blank" rel="noopener noreferrer" className="source-link">
+            <Github className="h-4 w-4" />
+            <span>{labels.repo}</span>
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </article>
   );
 }

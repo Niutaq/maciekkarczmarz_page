@@ -13,27 +13,16 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return (
-      <button
-        className="glass clay rounded-xl p-2.5 text-muted-foreground"
-        aria-label="Toggle theme"
-      >
-        <Sun className="h-5 w-5" />
-      </button>
-    );
+    return null;
   }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="glass clay rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:text-primary hover:glow-primary-sm"
+      className="nav-control"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      {theme === "dark" ? (
-        <Sun className="h-5 w-5" />
-      ) : (
-        <Moon className="h-5 w-5" />
-      )}
+      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </button>
   );
 }
