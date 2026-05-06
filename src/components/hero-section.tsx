@@ -25,7 +25,7 @@ export const HeroSection = () => {
       <div className="grid min-w-0 min-h-[calc(100svh-9rem)] gap-10 px-6 pt-8 md:min-h-[calc(100vh-10rem)] md:px-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="relative z-10 flex min-w-0 flex-col justify-center">
           <p className="eyebrow mb-5">{t.hero.eyebrow}</p>
-          <h1 className="max-w-5xl text-5xl font-semibold leading-[0.92] text-foreground sm:text-6xl md:text-8xl lg:text-9xl">
+          <h1 className="max-w-5xl text-5xl font-semibold leading-[0.92] text-foreground sm:text-6xl md:text-8xl lg:text-9xl chromatic-hover">
             <span className="block">Maciej</span>
             <span className="block">Karczmarz</span>
           </h1>

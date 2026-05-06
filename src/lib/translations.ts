@@ -186,6 +186,7 @@ export const translations = {
       title: "CV i praca inżynierska",
       description: "Dostępne do pobrania lub szybkiego podglądu.",
       cv_title: "Curriculum Vitae",
+      cv_short: "CV",
       thesis_title: "Praca inżynierska",
       thesis_short: "Praca",
       cv_desc:
@@ -255,6 +256,7 @@ export const translations = {
       constraint_label: "Constraint",
       why_label: "Why it matters",
       stack_label: "Stack",
+      project_label: "Project",
     },
     projects_items: {
       gix: {
@@ -414,3 +416,4 @@ export const translations = {
     },
   },
 };
+

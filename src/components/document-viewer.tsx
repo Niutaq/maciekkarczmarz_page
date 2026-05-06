@@ -7,6 +7,7 @@ export function DocumentViewer() {
   const documents = [
     {
       id: "cv",
+      label: t.documents.cv_short,
       title: t.documents.cv_title,
       desc: t.documents.cv_desc,
       href: language === "pl" ? "/cv-polskie.pdf" : "/cv-english.pdf",
@@ -14,6 +15,7 @@ export function DocumentViewer() {
     },
     {
       id: "thesis",
+      label: t.documents.thesis_short,
       title: t.documents.thesis_title,
       desc: t.documents.thesis_desc,
       href: language === "pl" ? "/obrona-polskie.pdf" : "/obrona-english.pdf",
@@ -40,7 +42,7 @@ export function DocumentViewer() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="document-id">{doc.id}</p>
+                  <p className="document-id">{t.documents.document_label} / {doc.label}</p>
                   <h3>{doc.title}</h3>
                   <p>{doc.desc}</p>
                 </div>
