@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       bridge: "Profil",
       projects: "Projekty",
-      graphics: "Technical Art",
+      graphics: "Grafika",
       experience: "Doświadczenie",
       education: "Edukacja",
       documents: "Dokumenty",
@@ -12,7 +12,7 @@ export const translations = {
       close: "Zamknij",
     },
     hero: {
-      eyebrow: "Go / Cloud / Technical Art",
+      eyebrow: "Go / Chmura / Grafika",
       title: "Maciej Karczmarz",
       description:
         "Łączę Go z narzędziami 3D, patrząc na wydajność i koszt obliczeń po obu stronach pipeline'u.",
@@ -120,7 +120,7 @@ export const translations = {
     },
     experience_items: [
       {
-        title: "Technical Artist / Grafik 3D",
+        title: "Grafik 3D",
         company: "Simplicity Games",
         location: "Rzeszów",
         period: "Lis 2024 - Sty 2025",
@@ -157,7 +157,7 @@ export const translations = {
       ],
     },
     technical_art: {
-      eyebrow: "3D / Technical Art",
+      eyebrow: "3D / Grafika",
       title: "Assety i środowiska projektowane z myślą o runtime.",
       description:
         "Moje doświadczenie 3D jest produkcyjne, nie dekoracyjne: modelowanie, optymalizacja siatek, LOD, collision meshes, PBR, Unity, UE5 i proceduralne pipeline'y.",
@@ -211,7 +211,7 @@ export const translations = {
     nav: {
       bridge: "Profile",
       projects: "Work",
-      graphics: "Technical Art",
+      graphics: "Graphics",
       experience: "Experience",
       education: "Education",
       documents: "Documents",
@@ -220,7 +220,7 @@ export const translations = {
       close: "Close",
     },
     hero: {
-      eyebrow: "Go / Cloud / Technical Art",
+      eyebrow: "Go / Cloud / Graphics",
       title: "Maciej Karczmarz",
       description:
         "I connect Go with 3D tools, focusing on performance and compute cost across both sides of the pipeline.",
@@ -329,7 +329,7 @@ export const translations = {
     },
     experience_items: [
       {
-        title: "Technical Artist / 3D Artist",
+        title: "3D Artist",
         company: "Simplicity Games",
         location: "Rzeszow",
         period: "Nov 2024 - Jan 2025",
@@ -366,7 +366,7 @@ export const translations = {
       ],
     },
     technical_art: {
-      eyebrow: "3D / Technical Art",
+      eyebrow: "3D / Graphics",
       title: "Assets and environments designed with runtime in mind.",
       description:
         "My 3D experience is production-minded, not decorative: modeling, mesh optimization, LODs, collision meshes, PBR, Unity, UE5, and procedural pipelines.",
@@ -416,4 +416,5 @@ export const translations = {
     },
   },
 };
+
 

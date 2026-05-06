@@ -55,15 +55,21 @@ export function CommandPalette() {
         className="command-trigger"
       >
         <Search className="h-4 w-4" />
-        <span>Ctrl K</span>
+        <span>⌘ + K / Ctrl + K</span>
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder={language === "pl" ? "Szukaj sekcji..." : "Search sections..."} />
+        <CommandInput
+          placeholder={
+            language === "pl" ? "Szukaj sekcji..." : "Search sections..."
+          }
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
 
-          <CommandGroup heading={language === "pl" ? "Nawigacja" : "Navigation"}>
+          <CommandGroup
+            heading={language === "pl" ? "Nawigacja" : "Navigation"}
+          >
             <CommandItem onSelect={() => runCommand(() => goTo("bridge"))}>
               <Network className="mr-2 h-4 w-4" />
               <span>{t.nav.bridge}</span>
@@ -100,7 +106,10 @@ export function CommandPalette() {
             <CommandItem
               onSelect={() =>
                 runCommand(() => {
-                  window.open(language === "pl" ? "/cv-polskie.pdf" : "/cv-english.pdf", "_blank");
+                  window.open(
+                    language === "pl" ? "/cv-polskie.pdf" : "/cv-english.pdf",
+                    "_blank",
+                  );
                 })
               }
             >
