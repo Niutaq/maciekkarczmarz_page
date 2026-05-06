@@ -942,12 +942,8 @@
   }
 
   .nav-menu-button {
-    position: fixed;
-    right: 1.35rem;
-    top: 1.35rem;
     width: 2.55rem;
     padding-inline: 0;
-    background: var(--card);
   }
 
   .nav-menu-button span {
