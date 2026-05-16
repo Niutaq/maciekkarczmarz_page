@@ -92,7 +92,7 @@ function TimelineSection({
           {items.map((item) => (
             <article
               key={`${item.title}-${item.period}`}
-              className="timeline-item"
+              className="timeline-card"
             >
               <div className="timeline-marker">
                 <Icon className="h-4 w-4" />

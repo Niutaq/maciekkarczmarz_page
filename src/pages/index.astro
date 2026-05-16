@@ -321,7 +321,8 @@
         margin-inline: auto;
       }
 
-      .section {
+      .section,
+      .section-shell {
         position: relative;
         padding-block: var(--section-gap);
         scroll-margin-top: calc(var(--nav-height) + 24px);
@@ -1631,7 +1632,7 @@
       .timeline-card {
         overflow: hidden;
         padding: 24px;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
       }
@@ -2123,15 +2124,15 @@
               stroke="currentColor"
               aria-hidden="true"
             >
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2" />
-              <path d="M12 20v2" />
-              <path d="m4.93 4.93 1.41 1.41" />
-              <path d="m17.66 17.66 1.41 1.41" />
-              <path d="M2 12h2" />
-              <path d="M20 12h2" />
-              <path d="m6.34 17.66-1.41 1.41" />
-              <path d="m19.07 4.93-1.41 1.41" />
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
             </svg>
           </button>
           <a
@@ -2139,8 +2140,7 @@
             href="/cv-english.pdf"
             download
             data-doc="cv"
-            data-i18n="nav.cv"
-            >View CV</a
+            data-i18n="nav.cv">View CV</a
           >
           <button
             class="menu-toggle"
@@ -2178,8 +2178,8 @@
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
                 </svg>
               </a>
               <a
@@ -2195,9 +2195,9 @@
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M12 3v12" />
-                  <path d="m7 10 5 5 5-5" />
-                  <path d="M5 21h14" />
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
                 </svg>
               </a>
               <a class="button button-ghost" href="#contact">
@@ -2208,8 +2208,8 @@
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M4 4h16v16H4z" />
-                  <path d="m4 7 8 6 8-6" />
+                  <path d="M4 4h16v16H4z"></path>
+                  <path d="m4 7 8 6 8-6"></path>
                 </svg>
               </a>
             </div>
@@ -2223,8 +2223,9 @@
               <div class="corner-cuts" aria-hidden="true"></div>
               <div class="console-head">
                 <span class="console-status"
-                  ><i class="status-dot"></i
-                  ><span data-i18n="console.status">Profile</span></span
+                  ><i class="status-dot"></i><span data-i18n="console.status"
+                    >Profile</span
+                  ></span
                 >
               </div>
               <div class="console-body">
@@ -2237,8 +2238,7 @@
                       ><a
                         href="https://go.dev/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >Go</a
+                        style="text-decoration: underline">Go</a
                       ></strong
                     >
                   </div>
@@ -2248,15 +2248,13 @@
                       ><a
                         href="https://aws.amazon.com/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >AWS</a
+                        style="text-decoration: underline">AWS</a
                       >
                       /
                       <a
                         href="https://www.digitalocean.com/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >DO</a
+                        style="text-decoration: underline">DO</a
                       ></strong
                     >
                   </div>
@@ -2266,15 +2264,13 @@
                       ><a
                         href="https://n8n.io/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >n8n</a
+                        style="text-decoration: underline">n8n</a
                       >
                       /
                       <a
                         href="https://aws.amazon.com/what-is/retrieval-augmented-generation/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >RAG</a
+                        style="text-decoration: underline">RAG</a
                       ></strong
                     >
                   </div>
@@ -2284,15 +2280,13 @@
                       ><a
                         href="https://unity.com/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >Unity</a
+                        style="text-decoration: underline">Unity</a
                       >
                       /
                       <a
                         href="https://www.unrealengine.com/"
                         target="_blank"
-                        style="text-decoration: underline"
-                        >UE5</a
+                        style="text-decoration: underline">UE5</a
                       ></strong
                     >
                   </div>
@@ -2371,31 +2365,27 @@
                   class="chip"
                   href="https://aws.amazon.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >AWS</a
+                  rel="noopener noreferrer">AWS</a
                 >
                 <a
                   class="chip"
                   href="https://www.digitalocean.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >DigitalOcean</a
+                  rel="noopener noreferrer">DigitalOcean</a
                 >
                 <a
                   class="chip"
                   href="https://www.finops.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.finops"
-                  >FinOps</a
+                  data-i18n="chip.finops">FinOps</a
                 >
                 <a
                   class="chip"
                   href="https://focus.finops.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.focus"
-                  >FOCUS</a
+                  data-i18n="chip.focus">FOCUS</a
                 >
               </div>
             </article>
@@ -2409,24 +2399,21 @@
                   class="chip"
                   href="https://n8n.io/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >n8n</a
+                  rel="noopener noreferrer">n8n</a
                 >
                 <a
                   class="chip"
                   href="https://aws.amazon.com/what-is/retrieval-augmented-generation/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.rag"
-                  >RAG workflows</a
+                  data-i18n="chip.rag">RAG workflows</a
                 >
                 <a
                   class="chip"
                   href="https://en.wikipedia.org/wiki/Orchestration_(computing)"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.api"
-                  >API orchestration</a
+                  data-i18n="chip.api">API orchestration</a
                 >
               </div>
             </article>
@@ -2440,8 +2427,7 @@
                   class="chip"
                   href="https://go.dev/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Go</a
+                  rel="noopener noreferrer">Go</a
                 >
               </div>
             </article>
@@ -2455,8 +2441,7 @@
                   class="chip"
                   href="https://www.python.org/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Python</a
+                  rel="noopener noreferrer">Python</a
                 >
               </div>
             </article>
@@ -2470,43 +2455,37 @@
                   class="chip"
                   href="https://www.blender.org/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Blender</a
+                  rel="noopener noreferrer">Blender</a
                 >
                 <a
                   class="chip"
                   href="https://unity.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Unity</a
+                  rel="noopener noreferrer">Unity</a
                 >
                 <a
                   class="chip"
                   href="https://www.unrealengine.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >UE5</a
+                  rel="noopener noreferrer">UE5</a
                 >
                 <a
                   class="chip"
                   href="https://www.sidefx.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Houdini</a
+                  rel="noopener noreferrer">Houdini</a
                 >
                 <a
                   class="chip"
                   href="https://quadspinner.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Gaea</a
+                  rel="noopener noreferrer">Gaea</a
                 >
                 <a
                   class="chip"
                   href="https://www.adobe.com/products/substance3d/3d-augmented-reality.html"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >Substance 3D Painter</a
+                  rel="noopener noreferrer">Substance 3D Painter</a
                 >
               </div>
             </article>
@@ -2520,24 +2499,21 @@
                   class="chip"
                   href="https://react.dev/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >React</a
+                  rel="noopener noreferrer">React</a
                 >
                 <a
                   class="chip"
                   href="https://en.wikipedia.org/wiki/Artificial_intelligence"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.ai"
-                  >AI research</a
+                  data-i18n="chip.ai">AI research</a
                 >
                 <a
                   class="chip"
                   href="https://en.wikipedia.org/wiki/Hackathon"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-i18n="chip.hackathons"
-                  >Hackathons</a
+                  data-i18n="chip.hackathons">Hackathons</a
                 >
               </div>
             </article>
@@ -2587,20 +2563,24 @@
                   <div class="iso-link link-2"></div>
                   <div class="iso-link link-3"></div>
                   <div class="iso-node node-1">
-                    <span data-i18n="map1.node1.label">Input</span
-                    ><b data-i18n="map1.node1.value">APIs / requests</b>
+                    <span data-i18n="map1.node1.label">Input</span><b
+                      data-i18n="map1.node1.value">APIs / requests</b
+                    >
                   </div>
                   <div class="iso-node node-2">
-                    <span data-i18n="map1.node2.label">Process</span
-                    ><b data-i18n="map1.node2.value">Go / n8n / RAG</b>
+                    <span data-i18n="map1.node2.label">Process</span><b
+                      data-i18n="map1.node2.value">Go / n8n / RAG</b
+                    >
                   </div>
                   <div class="iso-node node-3">
-                    <span data-i18n="map1.node3.label">Runtime</span
-                    ><b data-i18n="map1.node3.value">AWS / DigitalOcean</b>
+                    <span data-i18n="map1.node3.label">Runtime</span><b
+                      data-i18n="map1.node3.value">AWS / DigitalOcean</b
+                    >
                   </div>
                   <div class="iso-node node-4">
-                    <span data-i18n="map1.node4.label">Control</span
-                    ><b data-i18n="map1.node4.value">FinOps / reliability</b>
+                    <span data-i18n="map1.node4.label">Control</span><b
+                      data-i18n="map1.node4.value">FinOps / reliability</b
+                    >
                   </div>
                 </div>
               </aside>
@@ -2634,7 +2614,8 @@
                       left: 100px;
                       width: 30%;
                     "
-                  ></div>
+                  >
+                  </div>
                   <div
                     class="iso-link link-2"
                     style="
@@ -2643,19 +2624,23 @@
                       left: 40%;
                       width: 40%;
                     "
-                  ></div>
+                  >
+                  </div>
 
                   <div class="iso-node node-1" style="top: 20px; left: 10px">
-                    <span data-i18n="map2.node1.label">Modeling</span
-                    ><b data-i18n="map2.node1.value">Blender / Houdini</b>
+                    <span data-i18n="map2.node1.label">Modeling</span><b
+                      data-i18n="map2.node1.value">Blender / Houdini</b
+                    >
                   </div>
                   <div class="iso-node node-2" style="top: 100px; right: 20px">
-                    <span data-i18n="map2.node2.label">Texturing</span
-                    ><b data-i18n="map2.node2.value">Substance 3D</b>
+                    <span data-i18n="map2.node2.label">Texturing</span><b
+                      data-i18n="map2.node2.value">Substance 3D</b
+                    >
                   </div>
                   <div class="iso-node node-3" style="bottom: 20px; left: 40px">
-                    <span data-i18n="map2.node3.label">Engine</span
-                    ><b data-i18n="map2.node3.value">UE5 / Unity</b>
+                    <span data-i18n="map2.node3.label">Engine</span><b
+                      data-i18n="map2.node3.value">UE5 / Unity</b
+                    >
                   </div>
                 </div>
               </aside>
@@ -2737,8 +2722,8 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M8 7h9v9" />
+                    <path d="M7 17 17 7"></path>
+                    <path d="M8 7h9v9"></path>
                   </svg>
                 </a>
               </div>
@@ -2801,8 +2786,8 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M8 7h9v9" />
+                    <path d="M7 17 17 7"></path>
+                    <path d="M8 7h9v9"></path>
                   </svg>
                 </a>
               </div>
@@ -2865,8 +2850,8 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M8 7h9v9" />
+                    <path d="M7 17 17 7"></path>
+                    <path d="M8 7h9v9"></path>
                   </svg>
                 </a>
               </div>
@@ -2929,8 +2914,8 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M8 7h9v9" />
+                    <path d="M7 17 17 7"></path>
+                    <path d="M8 7h9v9"></path>
                   </svg>
                 </a>
               </div>
@@ -2992,8 +2977,8 @@
                     stroke="currentColor"
                     aria-hidden="true"
                   >
-                    <path d="M7 17 17 7" />
-                    <path d="M8 7h9v9" />
+                    <path d="M7 17 17 7"></path>
+                    <path d="M8 7h9v9"></path>
                   </svg>
                 </a>
               </div>
@@ -3068,8 +3053,8 @@
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
                 </svg>
               </a>
             </article>
