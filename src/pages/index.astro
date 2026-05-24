@@ -804,6 +804,7 @@
       }
 
       .hero .hero-glass {
+        border-radius: var(--radius-lg);
         background: rgba(0, 0, 0, 0.58) !important;
         border: 1px solid rgba(210, 105, 30, 0.22);
         box-shadow:
@@ -1240,6 +1241,7 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
+        border-radius: inherit;
         background:
           linear-gradient(
             90deg,
@@ -1260,6 +1262,7 @@
         gap: 16px;
         border-bottom: 1px solid var(--outline-variant);
         padding: 16px;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       }
 
       .console-status {
@@ -1562,6 +1565,7 @@
         left: 12px;
         border-top: 1px solid;
         border-left: 1px solid;
+        border-top-left-radius: 4px;
       }
 
       .corner-cuts::after {
@@ -1569,6 +1573,7 @@
         bottom: 12px;
         border-right: 1px solid;
         border-bottom: 1px solid;
+        border-bottom-right-radius: 4px;
       }
 
       .card {
