@@ -694,6 +694,9 @@
       .hero {
         --px: 0;
         --py: 0;
+        --hero-copper: #d2691e;
+        --hero-umber: #8b4513;
+        --hero-ink: #1a0f00;
         position: relative;
         min-height: calc(100svh - var(--nav-height));
         display: grid;
@@ -701,6 +704,382 @@
         padding-block: 48px 72px;
         overflow: hidden;
         perspective: 1100px;
+        background: var(--hero-ink);
+        isolation: isolate;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 18% 24%,
+            rgba(210, 105, 30, 0.22),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 68%,
+            rgba(139, 69, 19, 0.28),
+            transparent 48%
+          ),
+          linear-gradient(165deg, #2a1608 0%, var(--hero-ink) 58%, #0d0804 100%);
+      }
+
+      .hero-mesh {
+        position: absolute;
+        inset: -12%;
+        pointer-events: none;
+        contain: layout style paint;
+        transform: translateZ(0);
+      }
+
+      .hero-blob-wrap {
+        position: absolute;
+        width: min(52vw, 560px);
+        height: min(52vw, 560px);
+        pointer-events: none;
+        will-change: transform;
+      }
+
+      .hero-blob-shift {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .hero-blob-wrap:nth-child(1) {
+        top: 8%;
+        left: 6%;
+      }
+
+      .hero-blob-wrap:nth-child(2) {
+        top: 52%;
+        left: 58%;
+      }
+
+      .hero-blob-wrap:nth-child(3) {
+        top: 18%;
+        left: 62%;
+      }
+
+      .hero-blob {
+        width: 100%;
+        height: 100%;
+        border-radius: 58% 42% 34% 66% / 62% 38% 62% 38%;
+        filter: blur(48px);
+        opacity: 0.82;
+        pointer-events: none;
+        transform: translateZ(0);
+      }
+
+      .hero-blob-wrap:nth-child(1) .hero-blob {
+        background: radial-gradient(circle at 35% 35%, #d2691e, #8b4513 72%);
+      }
+
+      .hero-blob-wrap:nth-child(2) .hero-blob {
+        background: radial-gradient(circle at 60% 40%, #8b4513, #1a0f00 78%);
+      }
+
+      .hero-blob-wrap:nth-child(3) .hero-blob {
+        background: radial-gradient(circle at 42% 58%, #d2691e, #3d2210 70%);
+      }
+
+      .hero-grain {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        contain: strict;
+        opacity: 0.032;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 128px 128px;
+      }
+
+      .hero .page-shell {
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero .hero-glass {
+        background: rgba(0, 0, 0, 0.58) !important;
+        border: 1px solid rgba(210, 105, 30, 0.22);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.06),
+          0 18px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        @supports (
+          (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
+        ) {
+          .hero .hero-glass {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.46) !important;
+          }
+
+          html[data-theme="light"] .hero .hero-glass {
+            background: rgba(255, 255, 255, 0.62) !important;
+          }
+        }
+      }
+
+      html[data-theme="light"] .hero {
+        --hero-copper: var(--primary);
+        --hero-umber: #a85a12;
+        --hero-ink: var(--background);
+        background: var(--background);
+      }
+
+      html[data-theme="light"] .hero-bg {
+        background:
+          radial-gradient(
+            circle at 18% 24%,
+            rgba(196, 107, 0, 0.14),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 68%,
+            rgba(255, 190, 120, 0.12),
+            transparent 48%
+          ),
+          linear-gradient(
+            165deg,
+            var(--surface-container-low) 0%,
+            var(--background) 58%,
+            var(--surface) 100%
+          );
+      }
+
+      html[data-theme="light"] .hero-blob {
+        opacity: 0.62;
+      }
+
+      html[data-theme="light"] .hero-blob-wrap:nth-child(1) .hero-blob {
+        background: radial-gradient(
+          circle at 35% 35%,
+          rgba(255, 183, 121, 0.88),
+          rgba(196, 107, 0, 0.42) 72%
+        );
+      }
+
+      html[data-theme="light"] .hero-blob-wrap:nth-child(2) .hero-blob {
+        background: radial-gradient(
+          circle at 60% 40%,
+          rgba(255, 200, 140, 0.72),
+          rgba(196, 107, 0, 0.22) 78%
+        );
+      }
+
+      html[data-theme="light"] .hero-blob-wrap:nth-child(3) .hero-blob {
+        background: radial-gradient(
+          circle at 42% 58%,
+          rgba(255, 176, 100, 0.78),
+          rgba(239, 237, 235, 0.55) 70%
+        );
+      }
+
+      html[data-theme="light"] .hero-grain {
+        opacity: 0.052;
+        mix-blend-mode: multiply;
+      }
+
+      html[data-theme="light"] .hero .hero-glass {
+        background: color-mix(
+          in srgb,
+          var(--surface-bright) 68%,
+          transparent
+        ) !important;
+        border: 1px solid
+          color-mix(in srgb, var(--outline-variant) 88%, transparent);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.92),
+          0 18px 48px rgba(0, 0, 0, 0.06);
+      }
+
+      html[data-theme="light"] .hero .hero-glass::before {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.55), transparent 30%),
+          linear-gradient(180deg, rgba(196, 107, 0, 0.06), transparent 36%);
+      }
+
+      html[data-theme="light"] .hero .button-primary {
+        color: var(--on-primary) !important;
+        border-color: color-mix(in srgb, var(--primary) 48%, transparent);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 42%),
+          linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-container)
+          );
+        box-shadow: var(--glow-bronze), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      }
+
+      html[data-theme="light"] .hero .button-primary:hover {
+        box-shadow:
+          0 0 28px rgba(196, 107, 0, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.42);
+      }
+
+      html[data-theme="light"] .hero .button-secondary {
+        color: var(--primary);
+        background: var(--surface-container);
+        border-color: color-mix(in srgb, var(--primary) 42%, transparent);
+      }
+
+      html[data-theme="light"] .hero .button-ghost {
+        color: var(--on-surface-variant);
+      }
+
+      .hero .hero-visual.hero-glass {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .hero .hero-glass::before {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent 30%),
+          linear-gradient(180deg, rgba(210, 105, 30, 0.08), transparent 36%);
+      }
+
+      .hero .button-primary {
+        border-color: rgba(210, 105, 30, 0.55);
+        color: #fff8f0;
+        background:
+          linear-gradient(180deg, rgba(255, 214, 170, 0.2), transparent 42%),
+          linear-gradient(135deg, var(--hero-copper), var(--hero-umber));
+        box-shadow:
+          0 0 28px rgba(210, 105, 30, 0.42),
+          0 0 64px rgba(139, 69, 19, 0.18),
+          inset 0 1px 0 rgba(255, 237, 223, 0.28);
+      }
+
+      .hero .button-primary:hover {
+        box-shadow:
+          0 0 36px rgba(210, 105, 30, 0.52),
+          0 0 72px rgba(139, 69, 19, 0.24),
+          inset 0 1px 0 rgba(255, 237, 223, 0.34);
+      }
+
+      .hero--reduced-motion .hero-blob-wrap {
+        animation: none;
+      }
+
+      .hero .floating {
+        animation: float 8.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+      }
+
+      @media (max-width: 768px) {
+        .hero-mesh {
+          inset: -8%;
+        }
+
+        .hero-blob-wrap {
+          width: min(68vw, 380px);
+          height: min(68vw, 380px);
+        }
+
+        .hero-blob {
+          filter: blur(32px);
+          opacity: 0.72;
+        }
+
+        .hero--compact .hero-blob-wrap:nth-child(3) {
+          display: none;
+        }
+
+        .hero-layout {
+          gap: 28px;
+        }
+
+        .hero-copy,
+        .hero-copy .lead {
+          max-width: 100%;
+        }
+
+        .hero .floating {
+          animation: none;
+        }
+      }
+
+      @media (hover: none), (pointer: coarse) {
+        .hero-cursor {
+          display: none !important;
+        }
+
+        html.hero-cursor-active,
+        html.hero-cursor-active body,
+        html.hero-cursor-active *:not(.hero-cursor):not(.hero-cursor *) {
+          cursor: auto !important;
+        }
+      }
+
+      .hero-cursor {
+        --cursor-ring: rgba(255, 255, 255, 0.82);
+        --cursor-dot: #ffffff;
+        --cursor-ring-glow: rgba(255, 255, 255, 0.12);
+        --cursor-dot-glow: rgba(255, 255, 255, 0.45);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 120;
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .hero-cursor--interactive {
+        --cursor-ring: var(--primary);
+        --cursor-dot: var(--primary);
+        --cursor-ring-glow: color-mix(in srgb, var(--primary) 28%, transparent);
+        --cursor-dot-glow: color-mix(in srgb, var(--primary) 52%, transparent);
+      }
+
+      html[data-theme="light"] .hero-cursor {
+        --cursor-ring: color-mix(in srgb, var(--on-surface) 75%, transparent);
+        --cursor-dot: var(--on-surface);
+        --cursor-ring-glow: color-mix(in srgb, var(--on-surface) 14%, transparent);
+        --cursor-dot-glow: color-mix(in srgb, var(--on-surface) 38%, transparent);
+      }
+
+      html[data-theme="light"] .hero-cursor--interactive {
+        --cursor-ring: var(--primary);
+        --cursor-dot: var(--primary);
+        --cursor-ring-glow: color-mix(in srgb, var(--primary) 32%, transparent);
+        --cursor-dot-glow: color-mix(in srgb, var(--primary) 55%, transparent);
+      }
+
+      .hero-cursor-ring {
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--cursor-ring);
+        border-radius: 50%;
+        box-shadow: 0 0 18px var(--cursor-ring-glow);
+        transition:
+          border-color 0.28s var(--ease-premium),
+          box-shadow 0.28s var(--ease-premium);
+      }
+
+      .hero-cursor-dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cursor-dot);
+        box-shadow: 0 0 10px var(--cursor-dot-glow);
+        transition:
+          background-color 0.28s var(--ease-premium),
+          box-shadow 0.28s var(--ease-premium);
+      }
+
+      html.hero-cursor-active,
+      html.hero-cursor-active body,
+      html.hero-cursor-active *:not(.hero-cursor):not(.hero-cursor *) {
+        cursor: none !important;
       }
 
       .hero-layout {
@@ -2019,10 +2398,18 @@
           align-items: center;
         }
 
+        .hero-mesh {
+          transform: translate3d(
+            calc(var(--px) * 12px),
+            calc(var(--py) * 10px),
+            0
+          );
+        }
+
         .hero-visual {
           transform: translate3d(
-            calc(var(--px) * -10px),
-            calc(var(--py) * -8px),
+            calc(var(--px) * -14px),
+            calc(var(--py) * -11px),
             0
           );
         }
@@ -2100,9 +2487,24 @@
           opacity: 1;
           transform: none;
         }
+        .hero-mesh,
         .hero-visual,
         .project-card {
           transform: none !important;
+        }
+
+        .hero .floating {
+          animation: none !important;
+        }
+
+        .hero-cursor {
+          display: none !important;
+        }
+
+        html.hero-cursor-active,
+        html.hero-cursor-active body,
+        html.hero-cursor-active * {
+          cursor: auto !important;
         }
       }
 
@@ -2214,6 +2616,13 @@
         transform: translate3d(0, 0, 0) scale(1);
       }
 
+      .js .hero .reveal {
+        transition:
+          opacity 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 1.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
       html.theme-transition,
       html.theme-transition *,
       html.theme-transition *::before,
@@ -2307,10 +2716,30 @@
     </header>
 
     <main id="home">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-mesh">
+            <div class="hero-blob-wrap">
+              <div class="hero-blob-shift">
+                <div class="hero-blob"></div>
+              </div>
+            </div>
+            <div class="hero-blob-wrap">
+              <div class="hero-blob-shift">
+                <div class="hero-blob"></div>
+              </div>
+            </div>
+            <div class="hero-blob-wrap">
+              <div class="hero-blob-shift">
+                <div class="hero-blob"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-grain" aria-hidden="true"></div>
+        </div>
         <div class="page-shell">
           <div class="hero-layout">
-            <div class="hero-copy card reveal floating">
+            <div class="hero-copy hero-glass card reveal floating">
               <h1 id="hero-title">Maciej Karczmarz</h1>
               <p class="lead" data-i18n="hero.lead">
                 I connect Go with 3D tools, focusing on performance and compute
@@ -2363,7 +2792,7 @@
             </div>
 
             <div
-              class="hero-visual reveal floating"
+              class="hero-visual hero-glass reveal floating"
               aria-label="Cloud operations visual panel"
             >
               <div class="ops-console">
@@ -2445,6 +2874,11 @@
           </div>
         </div>
       </section>
+
+      <div class="hero-cursor" aria-hidden="true">
+        <div class="hero-cursor-ring"></div>
+        <div class="hero-cursor-dot"></div>
+      </div>
 
       <section class="section" id="about" aria-labelledby="about-title">
         <div class="page-shell">
@@ -4032,20 +4466,6 @@
 
           revealItems.forEach((item) => revealObserver.observe(item));
 
-          const hero = document.querySelector(".hero");
-          let rafId = 0;
-          hero?.addEventListener("pointermove", (event) => {
-            if (rafId) return;
-            rafId = window.requestAnimationFrame(() => {
-              const rect = hero.getBoundingClientRect();
-              const px = (event.clientX - rect.left) / rect.width - 0.5;
-              const py = (event.clientY - rect.top) / rect.height - 0.5;
-              hero.style.setProperty("--px", px.toFixed(3));
-              hero.style.setProperty("--py", py.toFixed(3));
-              rafId = 0;
-            });
-          });
-
           document.querySelectorAll(".project-card").forEach((card) => {
             card.addEventListener("pointermove", (event) => {
               const rect = card.getBoundingClientRect();
@@ -4107,6 +4527,9 @@
             window.location.href = `mailto:maciekkar1305@gmail.com?subject=${subject}&body=${body}`;
           });
       })();
+    </script>
+    <script>
+      import "../scripts/hero-liquid.ts";
     </script>
   </body>
 </html>
