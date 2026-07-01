@@ -83,20 +83,20 @@
         --inverse-on-surface: #32302f;
         --outline: #a18d7f;
         --outline-variant: #534438;
-        --surface-tint: #ffb779;
-        --primary: #ffb779;
-        --on-primary: #4c2700;
-        --primary-container: #cd7f32;
-        --on-primary-container: #432200;
-        --inverse-primary: #8e4e00;
-        --secondary: #ffb86e;
-        --on-secondary: #492900;
-        --secondary-container: #9e5e00;
-        --on-secondary-container: #ffeddf;
-        --tertiary: #ffb68c;
-        --on-tertiary: #532200;
-        --tertiary-container: #d17c46;
-        --on-tertiary-container: #491e00;
+        --surface-tint: #d5dda2;
+        --primary: #d5dda2;
+        --on-primary: #313715;
+        --primary-container: #4b5420;
+        --on-primary-container: #f1faa8;
+        --inverse-primary: #646f2c;
+        --secondary: #cac893;
+        --on-secondary: #313209;
+        --secondary-container: #48491e;
+        --on-secondary-container: #e6e4ad;
+        --tertiary: #9ccdb6;
+        --on-tertiary: #013725;
+        --tertiary-container: #1e4f3a;
+        --on-tertiary-container: #b8ead1;
         --error: #ffb4ab;
         --on-error: #690005;
         --error-container: #93000a;
@@ -129,8 +129,8 @@
         --margin-desktop: 64px;
         --max-width: 1440px;
 
-        --glow-bronze: 0 0 24px rgba(205, 127, 50, 0.15);
-        --glow-amber: 0 0 18px rgba(255, 184, 110, 0.18);
+        --glow-bronze: 0 0 24px rgba(121, 135, 81, 0.15);
+        --glow-amber: 0 0 18px rgba(213, 221, 162, 0.18);
         --border-subtle: 1px solid var(--outline-variant);
         --border-active: 1px solid var(--primary-container);
         --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -155,25 +155,25 @@
         --inverse-on-surface: #f5f4f2;
         --outline: #7b7673;
         --outline-variant: #cbc6c2;
-        --surface-tint: #c46b00;
-        --primary: #c46b00;
+        --surface-tint: #646f2c;
+        --primary: #646f2c;
         --on-primary: #ffffff;
-        --primary-container: #ffdfba;
-        --on-primary-container: #3d1c00;
-        --inverse-primary: #ffb779;
-        --secondary: #8a4f09;
+        --primary-container: #f1faa8;
+        --on-primary-container: #1d2200;
+        --inverse-primary: #d5dda2;
+        --secondary: #616233;
         --on-secondary: #ffffff;
-        --secondary-container: #c67623;
-        --on-secondary-container: #2c1600;
-        --tertiary: #8f4c23;
+        --secondary-container: #e6e4ad;
+        --on-secondary-container: #1d1e00;
+        --tertiary: #3a6651;
         --on-tertiary: #ffffff;
-        --tertiary-container: #d17c46;
-        --on-tertiary-container: #321200;
+        --tertiary-container: #b8ead1;
+        --on-tertiary-container: #002113;
         --background: #faf9f8;
         --on-background: #1d1b1a;
         --surface-variant: #e8e6e3;
-        --glow-bronze: 0 0 24px rgba(196, 107, 0, 0.08);
-        --glow-amber: 0 0 18px rgba(196, 107, 0, 0.12);
+        --glow-bronze: 0 0 24px rgba(100, 111, 44, 0.08);
+        --glow-amber: 0 0 18px rgba(100, 111, 44, 0.12);
       }
 
       * {
@@ -912,12 +912,10 @@
         border-color: color-mix(in srgb, var(--primary) 48%, transparent);
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 42%),
-          linear-gradient(
-            135deg,
-            var(--primary),
-            var(--primary-container)
-          );
-        box-shadow: var(--glow-bronze), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+          linear-gradient(135deg, var(--primary), var(--primary-container));
+        box-shadow:
+          var(--glow-bronze),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35);
       }
 
       html[data-theme="light"] .hero .button-primary:hover {
@@ -1042,8 +1040,16 @@
       html[data-theme="light"] .hero-cursor {
         --cursor-ring: color-mix(in srgb, var(--on-surface) 75%, transparent);
         --cursor-dot: var(--on-surface);
-        --cursor-ring-glow: color-mix(in srgb, var(--on-surface) 14%, transparent);
-        --cursor-dot-glow: color-mix(in srgb, var(--on-surface) 38%, transparent);
+        --cursor-ring-glow: color-mix(
+          in srgb,
+          var(--on-surface) 14%,
+          transparent
+        );
+        --cursor-dot-glow: color-mix(
+          in srgb,
+          var(--on-surface) 38%,
+          transparent
+        );
       }
 
       html[data-theme="light"] .hero-cursor--interactive {
@@ -4533,8 +4539,74 @@
           });
       })();
     </script>
+    <!-- <style is:inline>
+      #lens-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        backdrop-filter: blur(1px) brightness(1.15) hue-rotate(15deg);
+        background: rgba(121, 135, 81, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      body:hover #lens-cursor {
+        opacity: 1;
+      }
+    </style> -->
     <script>
       import "../scripts/hero-liquid.ts";
+      import gsap from "gsap";
+
+      // 1. Lens Cursor Effect
+      const lens = document.createElement("div");
+      lens.id = "lens-cursor";
+      document.body.appendChild(lens);
+
+      gsap.set(lens, { xPercent: -50, yPercent: -50 });
+
+      const lensX = gsap.quickTo(lens, "x", { duration: 0.6, ease: "power3" });
+      const lensY = gsap.quickTo(lens, "y", { duration: 0.6, ease: "power3" });
+
+      window.addEventListener("mousemove", (e) => {
+        lensX(e.clientX);
+        lensY(e.clientY);
+      });
+
+      // 2. Magnetic Buttons Effect
+      const magneticButtons = document.querySelectorAll(
+        ".button-primary, .button-secondary",
+      );
+
+      magneticButtons.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          // Calculate distance from center of the button
+          const x = (e.clientX - (rect.left + rect.width / 2)) * 0.3;
+          const y = (e.clientY - (rect.top + rect.height / 2)) * 0.3;
+
+          gsap.to(btn, {
+            x: x,
+            y: y,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.7,
+            ease: "elastic.out(1, 0.3)",
+          });
+        });
+      });
     </script>
   </body>
 </html>
