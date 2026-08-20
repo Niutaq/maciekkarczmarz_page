@@ -70,21 +70,20 @@ export const translations = {
           "Łączy RAG, n8n i AWS w praktyczny workflow sprzedażowo-techniczny z myśleniem o skalowalności i powtarzalności procesu.",
         tech: ["n8n", "AWS", "RAG", "Automatyzacja"],
       },
-      grat: {
-        title: "GRAT",
-        role: "Aplikacja / integracja API",
+      nequ3d: {
+        title: "Nequ3D",
+        role: "Reality capture telemetry pipeline",
         constraint:
-          "Dane środowiskowe z różnych źródeł muszą być spójne, czytelne i dostępne w jednej aplikacji.",
-        desc: "Interaktywny system wizualizacji danych pogodowych. Integruje OpenWeatherMap, Google Maps i Windy w jednym widoku.",
+          "Ogromne ilości danych ze skaningu 3D i mapowania mobilnego muszą być efektywnie przetwarzane i wizualizowane.",
+        desc: "Pipeline przetwarzania danych telemetrycznych z mapowania mobilnego. Wykorzystuje Go, Python oraz technologie NVIDIA Omniverse (OpenUSD, RTX Neural Texture Compression).",
         impact:
-          "Pokazuje pracę z API, wizualizacją danych, kontekstem lokalizacji i budową użytecznego narzędzia desktopowego.",
+          "Pokazuje integrację nowoczesnych standardów (OpenUSD) i umiejętność optymalizacji dużych zbiorów danych geometrycznych.",
         tech: [
-          "Java",
-          "JavaFX",
-          "API",
-          "OpenWeatherMap",
-          "Google Maps",
-          "Windy",
+          "Go",
+          "Python",
+          "OpenUSD",
+          "Omniverse",
+          "3D Data",
         ],
       },
       grats: {
@@ -279,21 +278,20 @@ export const translations = {
           "Connects RAG, n8n, and AWS into a practical sales/technical workflow with scalability and process repeatability in mind.",
         tech: ["n8n", "AWS", "RAG", "Automation"],
       },
-      grat: {
-        title: "GRAT",
-        role: "Application / API integration",
+      nequ3d: {
+        title: "Nequ3D",
+        role: "Reality capture telemetry pipeline",
         constraint:
-          "Environmental data from multiple sources has to become consistent, readable, and available in one application.",
-        desc: "Interactive weather data visualization system. Integrates OpenWeatherMap, Google Maps, and Windy into one view.",
+          "Massive amounts of mobile mapping data must be rapidly processed and optimized for real-time visualization.",
+        desc: "Processing pipeline designed for mobile mapping and reality capture telemetry, leveraging Go, Python, and NVIDIA Omniverse technologies (OpenUSD + RTX Neural Texture Compression).",
         impact:
-          "Shows API integration, data visualization, location context, and practical desktop-tool thinking.",
+          "Shows integration of cutting-edge technologies (OpenUSD) and optimization of massive 3D scanning datasets.",
         tech: [
-          "Java",
-          "JavaFX",
-          "API",
-          "OpenWeatherMap",
-          "Google Maps",
-          "Windy",
+          "Go",
+          "Python",
+          "OpenUSD",
+          "Omniverse",
+          "3D Data",
         ],
       },
       grats: {
