@@ -1,7 +1,7 @@
 import {
   ArrowUpRight,
+  Box,
   BrainCircuit,
-  CloudSun,
   Github,
   MonitorUp,
   Route,
@@ -54,11 +54,11 @@ export function PipelineSection() {
       data: t.projects_items.sand,
     },
     {
-      id: "grat",
-      repo: "https://github.com/Niutaq/GRAT",
-      image: "/grat.png",
-      icon: CloudSun,
-      data: t.projects_items.grat,
+      id: "nequ3d",
+      repo: "https://github.com/Niutaq/Nequ3D",
+      image: "/nequ3d.png",
+      icon: Box,
+      data: t.projects_items.nequ3d,
     },
   ];
 
