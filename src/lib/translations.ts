@@ -147,7 +147,7 @@ export const translations = {
           desc: "Studia inżynierskie na Wydziale Elektrotechniki i Informatyki. Projekty z C++, Python, MATLAB, R, React, AI oraz grafiki 3D; udział w NASA Space Apps Challenge, DIGIEDUHACK, Hack SPACESHIELD, Hack CARPATHIA i działalność w SKNI KOD od 2022.",
         },
         {
-          title: "Matma / Fizyka / Informatyka",
+          title: "Matematyka / Fizyka / Informatyka",
           company: "Samorządowe Liceum Ogólnokształcące",
           location: "Stalowa Wola",
           period: "Wrz 2019 - Maj 2022",
