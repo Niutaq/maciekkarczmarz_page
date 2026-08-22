@@ -106,6 +106,26 @@ export const translations = {
           "Pokazuje myślenie o symulacji, wydajności obliczeń i wiarygodnym zachowaniu systemu w ruchu.",
         tech: ["C++", "Fizyka", "Symulacja"],
       },
+      oentike: {
+        title: "Oentike",
+        role: "Architektura / AI Governance",
+        constraint:
+          "Przyznawanie bezpośredniego dostępu do API chmury to ogromne ryzyko. Wymaga ścisłego nadzoru za pomocą systemów Multi-Agent LLM.",
+        desc: "Platforma kontroli kosztów i zarządzania chmurą, eliminująca marnotrawstwo zasobów i nieprzewidywalność AI poprzez bramkę Zero-Trust.",
+        impact:
+          "Wdraża bezpieczną, opartą na AI bramkę (Rust, Go, Python), analizującą i audytującą żądania zgodnie ze standardami FOCUS.",
+        tech: ["Rust", "Go", "Python", "Astro", "AI"],
+      },
+      honeypot: {
+        title: "Honeypot",
+        role: "Bezpieczeństwo / Operacje",
+        constraint:
+          "Wymaga kontrolowanego, bezpiecznego środowiska do śledzenia i analizy cyberataków na popularne protokoły i fałszywe strony.",
+        desc: "Środowisko honeypot na Raspberry Pi, zbierające i wizualizujące ataki na wystawione usługi dla celów akademickich.",
+        impact:
+          "Integruje Cowrie, OpenCanary, Promtail, Loki i Grafanę w spójny potok logowania i analizy zagrożeń.",
+        tech: ["Raspberry Pi", "Grafana", "Security", "Operations"],
+      },
     },
     experience: {
       eyebrow: "Doświadczenie",
@@ -313,6 +333,26 @@ export const translations = {
         impact:
           "Shows simulation thinking, compute efficiency, and believable behavior under motion.",
         tech: ["C++", "Physics", "Simulation"],
+      },
+      oentike: {
+        title: "Oentike",
+        role: "Architecture / AI Governance",
+        constraint:
+          "Granting raw API access for cloud provisioning is a massive risk. Needs strict oversight using multi-agent LLM systems.",
+        desc: "Cost control and governance platform resolving cloud waste and AI unpredictability through a Zero-Trust gateway.",
+        impact:
+          "Implements a secure, AI-driven gateway using Rust, Go, Python, and Astro to analyze and audit financial requests based on FOCUS standards.",
+        tech: ["Rust", "Go", "Python", "Astro", "AI"],
+      },
+      honeypot: {
+        title: "Honeypot",
+        role: "Security / Operations",
+        constraint:
+          "Needs a controlled, safe environment to track, ingest, and analyze cyber attacks against common protocols and fake web pages.",
+        desc: "A Raspberry Pi honeypot stack collecting and visualizing attacks against exposed services for controlled academic scenarios.",
+        impact:
+          "Integrates Cowrie, OpenCanary, Promtail, Loki, and Grafana into a cohesive pipeline for threat intelligence and log aggregation.",
+        tech: ["Raspberry Pi", "Grafana", "Security", "Operations"],
       },
     },
     experience: {
