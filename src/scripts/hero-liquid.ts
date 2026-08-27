@@ -207,17 +207,14 @@ function isInteractiveAt(x: number, y: number) {
 
 export function initSiteCursor() {
   const cursor = document.querySelector<HTMLElement>(".hero-cursor");
-  const ring = document.querySelector<HTMLElement>(".hero-cursor-ring");
   const dot = document.querySelector<HTMLElement>(".hero-cursor-dot");
-  if (!cursor || !ring || !dot) return;
+  if (!cursor || !dot) return;
 
   document.documentElement.classList.add("hero-cursor-active");
 
   gsap.set(cursor, { autoAlpha: 0 });
-  gsap.set([ring, dot], { xPercent: -50, yPercent: -50 });
+  gsap.set(dot, { xPercent: -50, yPercent: -50 });
 
-  const ringX = gsap.quickTo(ring, "x", { duration: 0.38, ease: "power3.out" });
-  const ringY = gsap.quickTo(ring, "y", { duration: 0.38, ease: "power3.out" });
   const dotX = gsap.quickTo(dot, "x", { duration: 0.14, ease: "power3.out" });
   const dotY = gsap.quickTo(dot, "y", { duration: 0.14, ease: "power3.out" });
 
@@ -249,8 +246,6 @@ export function initSiteCursor() {
       hide();
       return;
     }
-    ringX(pendingX);
-    ringY(pendingY);
     dotX(pendingX);
     dotY(pendingY);
     setInteractive(isInteractiveAt(pendingX, pendingY));

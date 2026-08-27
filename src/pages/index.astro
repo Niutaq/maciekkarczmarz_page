@@ -1059,28 +1059,21 @@
         --cursor-dot-glow: color-mix(in srgb, var(--primary) 55%, transparent);
       }
 
-      .hero-cursor-ring {
-        position: absolute;
-        width: 34px;
-        height: 34px;
-        border: 1px solid var(--cursor-ring);
-        border-radius: 50%;
-        box-shadow: 0 0 18px var(--cursor-ring-glow);
-        transition:
-          border-color 0.28s var(--ease-premium),
-          box-shadow 0.28s var(--ease-premium);
-      }
-
       .hero-cursor-dot {
         position: absolute;
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background: var(--cursor-dot);
         box-shadow: 0 0 10px var(--cursor-dot-glow);
-        transition:
-          background-color 0.28s var(--ease-premium),
-          box-shadow 0.28s var(--ease-premium);
+        transition: background-color 0.28s var(--ease-premium), box-shadow 0.28s var(--ease-premium), width 0.28s var(--ease-premium), height 0.28s var(--ease-premium);
+      }
+      
+      .hero-cursor--interactive .hero-cursor-dot {
+        background: var(--primary);
+        box-shadow: 0 0 14px color-mix(in srgb, var(--primary) 60%, transparent);
+        width: 20px;
+        height: 20px;
       }
 
       html.hero-cursor-active,
@@ -2887,7 +2880,8 @@
       </section>
 
       <div class="hero-cursor" aria-hidden="true">
-        <div class="hero-cursor-ring"></div>
+        
+        
         <div class="hero-cursor-dot"></div>
       </div>
 
