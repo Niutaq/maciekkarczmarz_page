@@ -108,13 +108,13 @@ export const translations = {
       },
       oentike: {
         title: "Oentike",
-        role: "Architektura / AI Governance",
+        role: "Full-Stack Development",
         constraint:
-          "Przyznawanie bezpośredniego dostępu do API chmury to ogromne ryzyko. Wymaga ścisłego nadzoru za pomocą systemów Multi-Agent LLM.",
-        desc: "Platforma kontroli kosztów i zarządzania chmurą, eliminująca marnotrawstwo zasobów i nieprzewidywalność AI poprzez bramkę Zero-Trust.",
+          "Zbudowanie niezawodnego lokalnego systemu oceny warunków z atlasem offline oraz precyzyjne przetwarzanie danych geolokalizacyjnych.",
+        desc: "Lokalny asystent warunków na grzyby dla polskich lasów: wyjaśnialne oceny, ogólna mapa sezonowa oraz atlas offline.",
         impact:
-          "Wdraża bezpieczną, opartą na AI bramkę (Rust, Go, Python), analizującą i audytującą żądania zgodnie ze standardami FOCUS.",
-        tech: ["Rust", "Go", "Python", "Astro", "AI"],
+          "Dostarcza wyjaśnialne oceny warunków i 9-dniowy trend sezonowy dzięki wykorzystaniu Go, PostGIS oraz UI w Astro opartym na Tauri.",
+        tech: ["Go", "PostGIS", "Tauri", "Astro", "Rust"],
       },
       honeypot: {
         title: "Honeypot",
@@ -336,13 +336,13 @@ export const translations = {
       },
       oentike: {
         title: "Oentike",
-        role: "Architecture / AI Governance",
+        role: "Full-Stack Development",
         constraint:
-          "Granting raw API access for cloud provisioning is a massive risk. Needs strict oversight using multi-agent LLM systems.",
-        desc: "Cost control and governance platform resolving cloud waste and AI unpredictability through a Zero-Trust gateway.",
+          "Building a reliable local condition scoring system with an offline-ready atlas and precise geolocation data processing.",
+        desc: "Local mushroom-conditions helper for Polish forests: explainable scores, a coarse seasonal map, and an offline atlas.",
         impact:
-          "Implements a secure, AI-driven gateway using Rust, Go, Python, and Astro to analyze and audit financial requests based on FOCUS standards.",
-        tech: ["Rust", "Go", "Python", "Astro", "AI"],
+          "Delivers explainable condition scores and a 9-day season trend using Go, PostGIS, and an Astro UI with a Tauri desktop wrapper.",
+        tech: ["Go", "PostGIS", "Tauri", "Astro", "Rust"],
       },
       honeypot: {
         title: "Honeypot",
