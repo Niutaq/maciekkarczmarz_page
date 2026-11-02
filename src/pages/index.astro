@@ -1,3 +1,14 @@
+---
+import { Image } from "astro:assets";
+import gixImg from "../assets/gix.png";
+import smartOfferImg from "../assets/smart-offer.png";
+import nequ3dImg from "../assets/nequ3d.png";
+import oentikeImg from "../assets/oentike.png";
+import honeypotImg from "../assets/honeypot.png";
+import sandSimulationImg from "../assets/sand-simulation.png";
+import gratsImg from "../assets/grats.png";
+import gratImg from "../assets/grat.png";
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,41 +80,46 @@
     </script>
     <style is:inline>
       :root {
-        --surface: #141312;
-        --surface-dim: #141312;
-        --surface-bright: #3b3937;
-        --surface-container-lowest: #0f0e0d;
-        --surface-container-low: #1d1b1a;
-        --surface-container: #211f1e;
-        --surface-container-high: #2b2a28;
-        --surface-container-highest: #363433;
-        --on-surface: #e6e1df;
-        --on-surface-variant: #d8c2b2;
-        --inverse-surface: #e6e1df;
-        --inverse-on-surface: #32302f;
-        --outline: #a18d7f;
-        --outline-variant: #534438;
-        --surface-tint: #d5dda2;
-        --primary: #d5dda2;
-        --on-primary: #313715;
-        --primary-container: #4b5420;
-        --on-primary-container: #f1faa8;
-        --inverse-primary: #646f2c;
-        --secondary: #cac893;
-        --on-secondary: #313209;
-        --secondary-container: #48491e;
-        --on-secondary-container: #e6e4ad;
-        --tertiary: #9ccdb6;
-        --on-tertiary: #013725;
-        --tertiary-container: #1e4f3a;
-        --on-tertiary-container: #b8ead1;
-        --error: #ffb4ab;
+        --surface: #1C1510;
+        --surface-dim: #150F0B;
+        --surface-bright: #3D2D20;
+        --surface-container-lowest: #120C08;
+        --surface-container-low: #231A13;
+        --surface-container: #2A1F17;
+        --surface-container-high: #35271E;
+        --surface-container-highest: #423227;
+        --on-surface: #F5EFE6;
+        --on-surface-variant: #D4C3B2;
+        --inverse-surface: #F5EFE6;
+        --inverse-on-surface: #2A1F17;
+        --outline: #8C735E;
+        --outline-variant: #4A3525;
+        --surface-tint: #D97724;
+        --primary: #D97724;
+        --primary-hover: #EA8632;
+        --on-primary: #FFFFFF;
+        --primary-container: #5C2F0B;
+        --on-primary-container: #FFD9B8;
+        --inverse-primary: #944A08;
+        --secondary: #9CAF88;
+        --on-secondary: #1E2B16;
+        --secondary-container: #33422A;
+        --on-secondary-container: #DCE7D3;
+        --tertiary: #E6D7C3;
+        --on-tertiary: #3A2B1D;
+        --tertiary-container: #4A3525;
+        --on-tertiary-container: #F8F1E7;
+        --walnut: #4A3525;
+        --sand: #E6D7C3;
+        --sage: #9CAF88;
+        --amber-orange: #D97724;
+        --error: #FFB4AB;
         --on-error: #690005;
-        --error-container: #93000a;
-        --on-error-container: #ffdad6;
-        --background: #141312;
-        --on-background: #e6e1df;
-        --surface-variant: #363433;
+        --error-container: #93000A;
+        --on-error-container: #FFDAD6;
+        --background: #17110C;
+        --on-background: #F5EFE6;
+        --surface-variant: #35271E;
 
         --font-display: "Sora", sans-serif;
         --font-body: "Sora", sans-serif;
@@ -129,7 +145,7 @@
         --margin-desktop: 64px;
         --max-width: 1440px;
 
-        --glow-bronze: 0 0 24px rgba(121, 135, 81, 0.15);
+        --glow-bronze: 0 0 24px rgba(156, 175, 136, 0.15);
         --glow-amber: 0 0 18px rgba(213, 221, 162, 0.18);
         --border-subtle: 1px solid var(--outline-variant);
         --border-active: 1px solid var(--primary-container);
@@ -141,39 +157,44 @@
       }
 
       html[data-theme="light"] {
-        --surface: #faf9f8;
-        --surface-dim: #f3f1f0;
-        --surface-bright: #ffffff;
-        --surface-container-lowest: #ffffff;
-        --surface-container-low: #f5f4f2;
-        --surface-container: #efedeb;
-        --surface-container-high: #e8e6e3;
-        --surface-container-highest: #e2dfdc;
-        --on-surface: #1d1b1a;
-        --on-surface-variant: #494644;
-        --inverse-surface: #32302f;
-        --inverse-on-surface: #f5f4f2;
-        --outline: #7b7673;
-        --outline-variant: #cbc6c2;
-        --surface-tint: #646f2c;
-        --primary: #646f2c;
-        --on-primary: #ffffff;
-        --primary-container: #f1faa8;
-        --on-primary-container: #1d2200;
-        --inverse-primary: #d5dda2;
-        --secondary: #616233;
-        --on-secondary: #ffffff;
-        --secondary-container: #e6e4ad;
-        --on-secondary-container: #1d1e00;
-        --tertiary: #3a6651;
-        --on-tertiary: #ffffff;
-        --tertiary-container: #b8ead1;
-        --on-tertiary-container: #002113;
-        --background: #faf9f8;
-        --on-background: #1d1b1a;
-        --surface-variant: #e8e6e3;
-        --glow-bronze: 0 0 24px rgba(100, 111, 44, 0.08);
-        --glow-amber: 0 0 18px rgba(100, 111, 44, 0.12);
+        --surface: #FAF6F0;
+        --surface-dim: #F2ECE1;
+        --surface-bright: #FFFFFF;
+        --surface-container-lowest: #FFFFFF;
+        --surface-container-low: #F6F0E6;
+        --surface-container: #EFE6D8;
+        --surface-container-high: #E6D7C3;
+        --surface-container-highest: #DAC9B2;
+        --on-surface: #2E1F14;
+        --on-surface-variant: #5C4736;
+        --inverse-surface: #2E1F14;
+        --inverse-on-surface: #FAF6F0;
+        --outline: #8C735E;
+        --outline-variant: #C8B59F;
+        --surface-tint: #D97724;
+        --primary: #C96715;
+        --primary-hover: #B8590C;
+        --on-primary: #FFFFFF;
+        --primary-container: #FFE5CE;
+        --on-primary-container: #3D1900;
+        --inverse-primary: #FFB680;
+        --secondary: #587046;
+        --on-secondary: #FFFFFF;
+        --secondary-container: #DCE8D3;
+        --on-secondary-container: #16240E;
+        --tertiary: #4A3525;
+        --on-tertiary: #FFFFFF;
+        --tertiary-container: #E6D7C3;
+        --on-tertiary-container: #26180E;
+        --walnut: #4A3525;
+        --sand: #E6D7C3;
+        --sage: #587046;
+        --amber-orange: #C96715;
+        --background: #FAF6F0;
+        --on-background: #2E1F14;
+        --surface-variant: #E8DDCE;
+        --glow-bronze: 0 0 24px rgba(74, 53, 37, 0.1);
+        --glow-amber: 0 0 18px rgba(201, 103, 21, 0.14);
       }
 
       * {
@@ -192,12 +213,12 @@
         background:
           radial-gradient(
             circle at 78% 8%,
-            rgba(205, 127, 50, 0.13),
+            rgba(217, 119, 36, 0.15),
             transparent 320px
           ),
           radial-gradient(
             circle at 16% 40%,
-            rgba(255, 183, 121, 0.08),
+            rgba(156, 175, 136, 0.14),
             transparent 360px
           ),
           linear-gradient(
@@ -240,10 +261,10 @@
         background:
           linear-gradient(
             90deg,
-            rgba(255, 183, 121, 0.04),
+            rgba(230, 215, 195, 0.04),
             transparent 16%,
             transparent 84%,
-            rgba(255, 183, 121, 0.04)
+            rgba(230, 215, 195, 0.04)
           ),
           linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 18%);
       }
@@ -254,7 +275,7 @@
       }
 
       html[data-theme="light"] .chip {
-        background: rgba(196, 107, 0, 0.08);
+        background: rgba(201, 103, 21, 0.08);
       }
 
       html[data-theme="light"] .project-media {
@@ -263,8 +284,8 @@
 
       html[data-theme="light"] .iso-grid {
         background:
-          linear-gradient(rgba(196, 107, 0, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(196, 107, 0, 0.04) 1px, transparent 1px),
+          linear-gradient(rgba(201, 103, 21, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 103, 21, 0.04) 1px, transparent 1px),
           var(--surface-container-lowest);
       }
 
@@ -292,12 +313,12 @@
         background:
           radial-gradient(
             circle at 78% 8%,
-            rgba(196, 107, 0, 0.06),
+            rgba(201, 103, 21, 0.06),
             transparent 400px
           ),
           radial-gradient(
             circle at 14% 42%,
-            rgba(196, 107, 0, 0.04),
+            rgba(201, 103, 21, 0.04),
             transparent 400px
           ),
           linear-gradient(
@@ -318,10 +339,10 @@
         background:
           linear-gradient(
             90deg,
-            rgba(196, 107, 0, 0.03),
+            rgba(201, 103, 21, 0.03),
             transparent 16%,
             transparent 84%,
-            rgba(196, 107, 0, 0.03)
+            rgba(201, 103, 21, 0.03)
           ),
           linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent 24%);
       }
@@ -490,7 +511,7 @@
         background:
           linear-gradient(
             135deg,
-            rgba(205, 127, 50, 0.18),
+            rgba(217, 119, 36, 0.18),
             rgba(29, 27, 26, 0.72)
           ),
           var(--surface-container-low);
@@ -570,7 +591,7 @@
       .nav-link:focus-visible,
       .nav-link.is-active {
         color: var(--primary);
-        background: rgba(255, 183, 121, 0.06);
+        background: rgba(230, 215, 195, 0.06);
       }
 
       .nav-link:hover::after,
@@ -625,7 +646,7 @@
         display: none;
         min-height: 44px;
         align-items: center;
-        border: 1px solid rgba(205, 127, 50, 0.72);
+        border: 1px solid rgba(217, 119, 36, 0.72);
         border-radius: var(--radius-default);
         padding: 10px 14px;
         color: var(--primary);
@@ -640,7 +661,7 @@
 
       .nav-cta:hover {
         transform: translateY(-1px);
-        background: rgba(205, 127, 50, 0.12);
+        background: rgba(217, 119, 36, 0.12);
         box-shadow: var(--glow-bronze);
       }
 
@@ -671,7 +692,7 @@
       .lang-option.is-active {
         border-color: var(--primary-container);
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.1);
+        background: rgba(217, 119, 36, 0.1);
       }
 
       .theme-toggle:hover,
@@ -694,9 +715,9 @@
       .hero {
         --px: 0;
         --py: 0;
-        --hero-copper: #d2691e;
-        --hero-umber: #8b4513;
-        --hero-ink: #1a0f00;
+        --hero-copper: #D97724;
+        --hero-umber: #4A3525;
+        --hero-ink: #17110C;
         position: relative;
         min-height: calc(100svh - var(--nav-height));
         display: grid;
@@ -724,7 +745,7 @@
             rgba(139, 69, 19, 0.28),
             transparent 48%
           ),
-          linear-gradient(165deg, #2a1608 0%, var(--hero-ink) 58%, #0d0804 100%);
+          linear-gradient(165deg, #3A2414 0%, var(--hero-ink) 55%, #100B07 100%);
       }
 
       .hero-mesh {
@@ -775,15 +796,15 @@
       }
 
       .hero-blob-wrap:nth-child(1) .hero-blob {
-        background: radial-gradient(circle at 35% 35%, #d2691e, #8b4513 72%);
+        background: radial-gradient(circle at 35% 35%, #D97724, #4A3525 72%);
       }
 
       .hero-blob-wrap:nth-child(2) .hero-blob {
-        background: radial-gradient(circle at 60% 40%, #8b4513, #1a0f00 78%);
+        background: radial-gradient(circle at 60% 40%, #4A3525, #17110C 78%);
       }
 
       .hero-blob-wrap:nth-child(3) .hero-blob {
-        background: radial-gradient(circle at 42% 58%, #d2691e, #3d2210 70%);
+        background: radial-gradient(circle at 42% 58%, #D97724, #9CAF88 70%);
       }
 
       .hero-grain {
@@ -806,7 +827,7 @@
       .hero .hero-glass {
         border-radius: var(--radius-lg);
         background: rgba(0, 0, 0, 0.58) !important;
-        border: 1px solid rgba(210, 105, 30, 0.22);
+        border: 1px solid rgba(217, 119, 36, 0.3);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.06),
           0 18px 48px rgba(0, 0, 0, 0.28);
@@ -839,7 +860,7 @@
         background:
           radial-gradient(
             circle at 18% 24%,
-            rgba(196, 107, 0, 0.14),
+            rgba(201, 103, 21, 0.14),
             transparent 42%
           ),
           radial-gradient(
@@ -862,24 +883,21 @@
       html[data-theme="light"] .hero-blob-wrap:nth-child(1) .hero-blob {
         background: radial-gradient(
           circle at 35% 35%,
-          rgba(255, 183, 121, 0.88),
-          rgba(196, 107, 0, 0.42) 72%
+          rgba(230, 215, 195, 0.95), rgba(217, 119, 36, 0.45) 72%
         );
       }
 
       html[data-theme="light"] .hero-blob-wrap:nth-child(2) .hero-blob {
         background: radial-gradient(
           circle at 60% 40%,
-          rgba(255, 200, 140, 0.72),
-          rgba(196, 107, 0, 0.22) 78%
+          rgba(156, 175, 136, 0.85), rgba(74, 53, 37, 0.28) 78%
         );
       }
 
       html[data-theme="light"] .hero-blob-wrap:nth-child(3) .hero-blob {
         background: radial-gradient(
           circle at 42% 58%,
-          rgba(255, 176, 100, 0.78),
-          rgba(239, 237, 235, 0.55) 70%
+          rgba(217, 119, 36, 0.65), rgba(230, 215, 195, 0.7) 70%
         );
       }
 
@@ -904,7 +922,7 @@
       html[data-theme="light"] .hero .hero-glass::before {
         background:
           linear-gradient(90deg, rgba(255, 255, 255, 0.55), transparent 30%),
-          linear-gradient(180deg, rgba(196, 107, 0, 0.06), transparent 36%);
+          linear-gradient(180deg, rgba(201, 103, 21, 0.06), transparent 36%);
       }
 
       html[data-theme="light"] .hero .button-primary {
@@ -920,7 +938,7 @@
 
       html[data-theme="light"] .hero .button-primary:hover {
         box-shadow:
-          0 0 28px rgba(196, 107, 0, 0.18),
+          0 0 28px rgba(201, 103, 21, 0.18),
           inset 0 1px 0 rgba(255, 255, 255, 0.42);
       }
 
@@ -942,25 +960,21 @@
       .hero .hero-glass::before {
         background:
           linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent 30%),
-          linear-gradient(180deg, rgba(210, 105, 30, 0.08), transparent 36%);
+          linear-gradient(180deg, rgba(217, 119, 36, 0.08), transparent 36%);
       }
 
       .hero .button-primary {
-        border-color: rgba(210, 105, 30, 0.55);
+        border-color: rgba(217, 119, 36, 0.65);
         color: #fff8f0;
         background:
           linear-gradient(180deg, rgba(255, 214, 170, 0.2), transparent 42%),
           linear-gradient(135deg, var(--hero-copper), var(--hero-umber));
-        box-shadow:
-          0 0 28px rgba(210, 105, 30, 0.42),
-          0 0 64px rgba(139, 69, 19, 0.18),
+        box-shadow: 0 0 28px rgba(217, 119, 36, 0.35), 0 0 64px rgba(74, 53, 37, 0.25),
           inset 0 1px 0 rgba(255, 237, 223, 0.28);
       }
 
       .hero .button-primary:hover {
-        box-shadow:
-          0 0 36px rgba(210, 105, 30, 0.52),
-          0 0 72px rgba(139, 69, 19, 0.24),
+        box-shadow: 0 0 36px rgba(217, 119, 36, 0.45), 0 0 72px rgba(74, 53, 37, 0.35),
           inset 0 1px 0 rgba(255, 237, 223, 0.34);
       }
 
@@ -1109,11 +1123,11 @@
         display: inline-flex;
         min-height: 32px;
         align-items: center;
-        border: 1px solid rgba(205, 127, 50, 0.38);
+        border: 1px solid rgba(217, 119, 36, 0.38);
         border-radius: var(--radius-default);
         padding: 6px 10px;
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.08);
+        background: rgba(217, 119, 36, 0.08);
         font-family: var(--font-mono);
         font-size: 0.75rem;
         font-weight: 650;
@@ -1157,12 +1171,12 @@
       }
 
       .button-primary {
-        border: 1px solid rgba(255, 183, 121, 0.38);
+        border: 1px solid rgba(230, 215, 195, 0.38);
         color: var(--on-primary);
         background:
           linear-gradient(
             180deg,
-            rgba(255, 183, 121, 0.24),
+            rgba(230, 215, 195, 0.24),
             rgba(255, 255, 255, 0)
           ),
           var(--primary-container);
@@ -1172,7 +1186,7 @@
       }
 
       .button-secondary {
-        border: 2px solid rgba(205, 127, 50, 0.86);
+        border: 2px solid rgba(217, 119, 36, 0.86);
         color: var(--primary);
         background: rgba(15, 14, 13, 0.42);
       }
@@ -1193,7 +1207,7 @@
 
       .button-primary:hover {
         box-shadow:
-          0 0 34px rgba(205, 127, 50, 0.23),
+          0 0 34px rgba(217, 119, 36, 0.23),
           inset 0 1px 0 rgba(255, 237, 223, 0.32);
       }
 
@@ -1201,7 +1215,7 @@
       .button-ghost:hover {
         border-color: var(--primary-container);
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.09);
+        background: rgba(217, 119, 36, 0.09);
         box-shadow: var(--glow-bronze);
       }
 
@@ -1245,7 +1259,7 @@
           linear-gradient(
             90deg,
             transparent,
-            rgba(255, 183, 121, 0.08),
+            rgba(156, 175, 136, 0.14),
             transparent
           ),
           linear-gradient(rgba(255, 255, 255, 0.035), transparent 18%);
@@ -1280,7 +1294,7 @@
         height: 8px;
         border-radius: var(--radius-full);
         background: var(--primary);
-        box-shadow: 0 0 12px rgba(255, 183, 121, 0.8);
+        box-shadow: 0 0 12px rgba(230, 215, 195, 0.8);
       }
 
       .console-id {
@@ -1398,7 +1412,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(255, 183, 121, 0.52),
+          rgba(230, 215, 195, 0.52),
           transparent
         );
         box-shadow: var(--glow-amber);
@@ -1417,20 +1431,20 @@
         display: grid;
         min-height: 88px;
         align-content: center;
-        border: 1px solid rgba(205, 127, 50, 0.34);
+        border: 1px solid rgba(217, 119, 36, 0.34);
         border-radius: var(--radius-default);
         padding: 16px;
         background:
           linear-gradient(
             145deg,
-            rgba(205, 127, 50, 0.18),
+            rgba(217, 119, 36, 0.18),
             rgba(29, 27, 26, 0.92) 44%,
             rgba(15, 14, 13, 0.96)
           ),
           var(--surface-container);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.07),
-          0 0 26px rgba(205, 127, 50, 0.08);
+          0 0 26px rgba(217, 119, 36, 0.08);
         transform: translate3d(0, 0, 0);
       }
 
@@ -1439,7 +1453,7 @@
         content: "";
         position: absolute;
         pointer-events: none;
-        background: rgba(205, 127, 50, 0.18);
+        background: rgba(217, 119, 36, 0.18);
       }
 
       .stack-plate::before {
@@ -1541,7 +1555,7 @@
         border-radius: inherit;
         background:
           linear-gradient(90deg, rgba(255, 255, 255, 0.045), transparent 28%),
-          linear-gradient(180deg, rgba(255, 183, 121, 0.04), transparent 34%);
+          linear-gradient(180deg, rgba(230, 215, 195, 0.04), transparent 34%);
       }
 
       .corner-cuts {
@@ -1556,7 +1570,7 @@
         position: absolute;
         width: 24px;
         height: 24px;
-        border-color: rgba(255, 183, 121, 0.54);
+        border-color: rgba(230, 215, 195, 0.54);
       }
 
       .corner-cuts::before {
@@ -1680,14 +1694,14 @@
         display: inline-flex;
         min-height: 32px;
         align-items: center;
-        border: 1px solid rgba(205, 127, 50, 0.38);
+        border: 1px solid rgba(217, 119, 36, 0.38);
         border-radius: var(--radius-default);
         padding: 6px 10px;
         color: var(--primary);
         background:
           linear-gradient(
             180deg,
-            rgba(205, 127, 50, 0.14),
+            rgba(217, 119, 36, 0.14),
             rgba(15, 14, 13, 0.4)
           ),
           var(--surface-container-low);
@@ -1767,10 +1781,10 @@
         transform-origin: center;
         border: 1px solid var(--outline-variant);
         background:
-          linear-gradient(rgba(255, 183, 121, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(156, 175, 136, 0.14) 1px, transparent 1px),
           linear-gradient(
             90deg,
-            rgba(255, 183, 121, 0.08) 1px,
+            rgba(156, 175, 136, 0.14) 1px,
             transparent 1px
           ),
           rgba(15, 14, 13, 0.4);
@@ -1783,18 +1797,18 @@
         min-width: 136px;
         min-height: 72px;
         align-content: center;
-        border: 1px solid rgba(205, 127, 50, 0.52);
+        border: 1px solid rgba(217, 119, 36, 0.52);
         border-radius: var(--radius-default);
         padding: 12px;
         background:
           linear-gradient(
             145deg,
-            rgba(205, 127, 50, 0.18),
+            rgba(217, 119, 36, 0.18),
             rgba(29, 27, 26, 0.94)
           ),
           var(--surface-container);
         box-shadow:
-          0 0 20px rgba(205, 127, 50, 0.1),
+          0 0 20px rgba(217, 119, 36, 0.1),
           inset 0 1px 0 rgba(255, 255, 255, 0.06);
         transform: translateZ(0);
       }
@@ -1838,9 +1852,9 @@
         height: 1px;
         background: linear-gradient(
           90deg,
-          rgba(255, 183, 121, 0),
-          rgba(255, 183, 121, 0.62),
-          rgba(255, 183, 121, 0)
+          rgba(230, 215, 195, 0),
+          rgba(230, 215, 195, 0.62),
+          rgba(230, 215, 195, 0)
         );
         transform-origin: left center;
         box-shadow: var(--glow-amber);
@@ -1883,7 +1897,7 @@
         background: linear-gradient(
           180deg,
           transparent,
-          rgba(255, 183, 121, 0.46),
+          rgba(230, 215, 195, 0.46),
           transparent
         );
       }
@@ -1914,7 +1928,7 @@
         opacity: 0;
         background: radial-gradient(
           circle at var(--mx) var(--my),
-          rgba(255, 183, 121, 0.16),
+          rgba(230, 215, 195, 0.16),
           transparent 34%
         );
         transition: opacity 180ms var(--ease-premium);
@@ -1923,7 +1937,7 @@
       .project-card:hover {
         border-color: var(--primary-container);
         box-shadow:
-          0 0 28px rgba(205, 127, 50, 0.14),
+          0 0 28px rgba(217, 119, 36, 0.14),
           inset 0 1px 0 rgba(255, 255, 255, 0.07);
       }
 
@@ -1939,7 +1953,7 @@
         background:
           linear-gradient(
             135deg,
-            rgba(255, 183, 121, 0.07),
+            rgba(230, 215, 195, 0.07),
             rgba(15, 14, 13, 0.1)
           ),
           var(--surface-container-lowest);
@@ -1970,7 +1984,7 @@
         pointer-events: none;
         background:
           linear-gradient(180deg, transparent, rgba(15, 14, 13, 0.28)),
-          linear-gradient(90deg, rgba(205, 127, 50, 0.12), transparent 42%);
+          linear-gradient(90deg, rgba(217, 119, 36, 0.12), transparent 42%);
       }
 
       .project-content {
@@ -2000,7 +2014,7 @@
       }
 
       .fact {
-        border-left: 2px solid rgba(205, 127, 50, 0.64);
+        border-left: 2px solid rgba(217, 119, 36, 0.64);
         padding-left: 12px;
       }
 
@@ -2081,11 +2095,11 @@
         display: inline-flex;
         min-height: 32px;
         align-items: center;
-        border: 1px solid rgba(205, 127, 50, 0.38);
+        border: 1px solid rgba(217, 119, 36, 0.38);
         border-radius: var(--radius-default);
         padding: 6px 10px;
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.08);
+        background: rgba(217, 119, 36, 0.08);
         font-family: var(--font-mono);
         font-size: 0.75rem;
         font-weight: 700;
@@ -2211,7 +2225,7 @@
       .field textarea:focus {
         border-bottom-color: var(--primary);
         background: rgba(29, 27, 26, 0.9);
-        box-shadow: 0 8px 20px rgba(205, 127, 50, 0.08);
+        box-shadow: 0 8px 20px rgba(217, 119, 36, 0.08);
       }
 
       html[data-theme="light"] .field input:focus,
@@ -2541,17 +2555,17 @@
 
       .map-tab:hover {
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.08);
+        background: rgba(217, 119, 36, 0.08);
       }
 
       .map-tab.active {
         color: var(--primary);
-        background: rgba(205, 127, 50, 0.12);
+        background: rgba(217, 119, 36, 0.12);
         box-shadow: inset 0 1px 0 rgba(255, 237, 223, 0.1);
       }
 
       html[data-theme="light"] .map-tab.active {
-        background: rgba(196, 107, 0, 0.08);
+        background: rgba(201, 103, 21, 0.08);
         box-shadow: none;
       }
 
@@ -2632,13 +2646,11 @@
       html.theme-transition *::before,
       html.theme-transition *::after {
         transition:
-          background-color 4.5s cubic-bezier(0.4, 0, 0.2, 1) !important,
-          color 3s ease !important,
-          border-color 3s ease !important,
-          box-shadow 3s ease !important,
-          filter 4.5s ease !important,
-          opacity 3s ease !important,
-          transform 3s ease !important;
+          background-color 0.35s ease !important,
+          color 0.25s ease !important,
+          border-color 0.25s ease !important,
+          box-shadow 0.25s ease !important,
+          opacity 0.25s ease !important;
       }
     </style>
   </head>
@@ -2910,9 +2922,7 @@
                   <span class="card-index">01</span>
                   <h3 data-i18n="about.backendTitle">Backend / Cloud</h3>
                   <p data-i18n="about.backendCopy">
-                    Go services, distributed systems, cloud infrastructure,
-                    and API integrations. I develop automation that connects
-                    tools and reduces manual work.
+                    Go services, distributed systems, cloud infrastructure guided by CNCF standards, and API integrations. I develop automation that connects tools and reduces manual work.
                   </p>
                 </article>
                 <article
@@ -3288,7 +3298,7 @@
           <div class="project-grid">
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/gix.png" alt="Gix real-time currency monitoring interface" loading="lazy" />
+                <Image src={gixImg} alt="Gix real-time currency monitoring interface" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3312,7 +3322,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/smart-offer.png" alt="SmartOffer automation panel" loading="lazy" />
+                <Image src={smartOfferImg} alt="SmartOffer automation panel" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3340,7 +3350,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/nequ3d.png" alt="Nequ3D platform" loading="lazy" />
+                <Image src={nequ3dImg} alt="Nequ3D platform" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3364,7 +3374,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/oentike.png" alt="Oentike Local Mushroom Conditions Helper" loading="lazy" />
+                <Image src={oentikeImg} alt="Oentike Local Mushroom Conditions Helper" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3388,7 +3398,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/honeypot.png" alt="Honeypot Raspberry Pi stack" loading="lazy" />
+                <Image src={honeypotImg} alt="Honeypot Raspberry Pi stack" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3412,7 +3422,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/sand-simulation.png" alt="Sand-Simulation granular physics simulation" loading="lazy" />
+                <Image src={sandSimulationImg} alt="Sand-Simulation granular physics simulation" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3436,7 +3446,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/grats.png" alt="GRATS OpenGL renderer" loading="lazy" />
+                <Image src={gratsImg} alt="GRATS OpenGL renderer" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3460,7 +3470,7 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img src="/grat.png" alt="GRAT weather data visualization application" loading="lazy" />
+                <Image src={gratImg} alt="GRAT weather data visualization application" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
@@ -3707,6 +3717,7 @@
             "chip.api": "API orchestration",
             "chip.ai": "AI research",
             "chip.hackathons": "Hackathons",
+            "chip.cncf": "CNCF",
             "nav.about": "About",
             "nav.stack": "Stack",
             "nav.projects": "Projects",
@@ -3726,8 +3737,7 @@
             "about.lead":
               "I study Computer Science at Rzeszów University of Technology, specializing in cybersecurity and cloud solutions. I develop projects in Go, Python, AWS, and Kubernetes, connecting technical decisions with process needs, operating costs, and technological risk.",
             "about.backendTitle": "Backend / Cloud",
-            "about.backendCopy":
-              "Go services, distributed systems, cloud infrastructure, and API integrations. I develop automation that connects tools and reduces manual work.",
+            "about.backendCopy": "Go services, distributed systems, cloud infrastructure guided by CNCF standards, and API integrations. I develop automation that connects tools and reduces manual work.",
             "about.graphicsTitle": "3D / Technical Art",
             "about.graphicsCopy":
               "Production experience optimizing 3D assets for Unity. I bring the same attention to performance, resource limits, and technical requirements to backend and cloud projects.",
@@ -3916,8 +3926,7 @@
             "about.lead":
               "Studiuję informatykę na Politechnice Rzeszowskiej, na specjalności Cyberbezpieczeństwo i rozwiązania chmurowe. Rozwijam projekty w Go, Pythonie, AWS i Kubernetes, łącząc decyzje techniczne z potrzebami procesów, kosztami utrzymania i ryzykiem technologicznym.",
             "about.backendTitle": "Backend / Cloud",
-            "about.backendCopy":
-              "Usługi w Go, systemy rozproszone, infrastruktura chmurowa i integracje API. Rozwijam automatyzacje, które łączą narzędzia i ograniczają pracę ręczną.",
+            "about.backendCopy": "Usługi w Go, systemy rozproszone, infrastruktura chmurowa rozwijana w oparciu o standardy CNCF oraz integracje API. Rozwijam automatyzacje, które łączą narzędzia i ograniczają pracę ręczną.",
             "about.graphicsTitle": "Grafika 3D / Technical Art",
             "about.graphicsCopy":
               "Doświadczenie produkcyjne w optymalizacji assetów 3D dla Unity. Tę samą dbałość o wydajność, ograniczenia zasobów i wymagania techniczne przenoszę do projektów backendowych i chmurowych.",
@@ -4087,6 +4096,7 @@
             "chip.api": "API-Orchestrierung",
             "chip.ai": "KI-Forschung",
             "chip.hackathons": "Hackathons",
+            "chip.cncf": "CNCF",
             "nav.about": "Profil",
             "nav.stack": "Stack",
             "nav.projects": "Projekte",
@@ -4106,8 +4116,7 @@
             "about.lead":
               "Ich studiere Informatik an der Technischen Universität Rzeszów mit dem Schwerpunkt Cybersicherheit und Cloud-Lösungen. In Projekten mit Go, Python, AWS und Kubernetes verbinde ich technische Entscheidungen mit Prozessanforderungen, Betriebskosten und technologischen Risiken.",
             "about.backendTitle": "Backend / Cloud",
-            "about.backendCopy":
-              "Go-Services, verteilte Systeme, Cloud-Infrastruktur und API-Integrationen. Ich entwickle Automatisierungen, die Werkzeuge verbinden und manuelle Arbeit reduzieren.",
+            "about.backendCopy": "Go-Services, verteilte Systeme, Cloud-Infrastruktur nach CNCF-Standards und API-Integrationen. Ich entwickle Automatisierungen, die Werkzeuge verbinden und manuelle Arbeit reduzieren.",
             "about.graphicsTitle": "3D / Technical Art",
             "about.graphicsCopy":
               "Produktionserfahrung bei der Optimierung von 3D-Assets für Unity. Dieselbe Aufmerksamkeit für Performance, Ressourcengrenzen und technische Anforderungen bringe ich in Backend- und Cloud-Projekte ein.",
@@ -4281,6 +4290,7 @@
             "chip.api": "API orchestration",
             "chip.ai": "AI research",
             "chip.hackathons": "Hackathons",
+            "chip.cncf": "CNCF",
             cv: "/cv-english.pdf",
             thesis: "/obrona-english.pdf",
           },
@@ -4337,6 +4347,7 @@
             "chip.api": "API-Orchestrierung",
             "chip.ai": "KI-Forschung",
             "chip.hackathons": "Hackathons",
+            "chip.cncf": "CNCF",
             cv: "/cv-english.pdf",
             thesis: "/obrona-english.pdf",
           },
@@ -4383,7 +4394,7 @@
           // Keep the transition class long enough for the 4.5s animation
           setTimeout(() => {
             document.documentElement.classList.remove("theme-transition");
-          }, 4600);
+          }, 400);
         };
 
         const storedTheme = localStorage.getItem("portfolio-theme-mode");
@@ -4544,7 +4555,7 @@
         pointer-events: none;
         z-index: 9999;
         backdrop-filter: blur(1px) brightness(1.15) hue-rotate(15deg);
-        background: rgba(121, 135, 81, 0.03);
+        background: rgba(156, 175, 136, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.05);
         opacity: 0;
         transition: opacity 0.5s ease;

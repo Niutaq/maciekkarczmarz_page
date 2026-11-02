@@ -9,12 +9,11 @@ const FINE_POINTER = window.matchMedia(
 const DESKTOP_LAYOUT = window.matchMedia("(min-width: 960px)").matches;
 const MOBILE_LAYOUT = window.matchMedia("(max-width: 768px)").matches;
 
-/** ~35% slower blob drift / scale vs original timings */
-const BLOB_SCALE_DURATION: [number, number] = [22, 32];
-const BLOB_SHIFT_DURATION: [number, number] = [30, 43];
-const BLOB_SCALE_DELAY_STEP = 2.15;
-const BLOB_SHIFT_DELAY_STEP = 2.95;
-const MAGNET_QUICK_DURATION = 1.55;
+const BLOB_SCALE_DURATION: [number, number] = [20, 30];
+const BLOB_SHIFT_DURATION: [number, number] = [26, 38];
+const BLOB_SCALE_DELAY_STEP = 2.0;
+const BLOB_SHIFT_DELAY_STEP = 2.6;
+const MAGNET_QUICK_DURATION = 1.4;
 
 function createVisibilityGate() {
   let heroVisible = true;
@@ -51,6 +50,7 @@ function scheduleFrame(callback: () => void) {
 
 function setHeroParallax(hero: HTMLElement, clientX: number, clientY: number) {
   const rect = hero.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
   const px = (clientX - rect.left) / rect.width - 0.5;
   const py = (clientY - rect.top) / rect.height - 0.5;
   hero.style.setProperty("--px", px.toFixed(3));
@@ -67,11 +67,11 @@ function initBlobMotion(
   const magnets = wraps.map((wrap) => ({
     x: gsap.quickTo(wrap, "x", {
       duration: MAGNET_QUICK_DURATION,
-      ease: "power1.out",
+      ease: "power2.out",
     }),
     y: gsap.quickTo(wrap, "y", {
       duration: MAGNET_QUICK_DURATION,
-      ease: "power1.out",
+      ease: "power2.out",
     }),
   }));
 
@@ -86,7 +86,7 @@ function initBlobMotion(
 
     motion.push(
       gsap.to(blob, {
-        scale: 1.06,
+        scale: 1.07,
         duration: gsap.utils.random(...BLOB_SCALE_DURATION),
         ease: "sine.inOut",
         repeat: -1,
@@ -97,8 +97,8 @@ function initBlobMotion(
 
     motion.push(
       gsap.to(shift, {
-        x: `+=${gsap.utils.random(-40, 40)}`,
-        y: `+=${gsap.utils.random(-32, 32)}`,
+        x: `+=${gsap.utils.random(-34, 34)}`,
+        y: `+=${gsap.utils.random(-26, 26)}`,
         duration: gsap.utils.random(...BLOB_SHIFT_DURATION),
         ease: "sine.inOut",
         repeat: -1,
@@ -130,12 +130,13 @@ function initBlobMotion(
     if (magneticFrame % 2 !== 0) return;
 
     const rect = hero.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
     const nx = (pointerX - rect.left) / rect.width - 0.5;
     const ny = (pointerY - rect.top) / rect.height - 0.5;
 
     wraps.forEach((_, index) => {
       if (MOBILE_LAYOUT && index >= 2) return;
-      const pull = 40 + index * 10;
+      const pull = 28 + index * 8;
       const sign = index % 2 === 0 ? 1 : -1;
       magnets[index].x(sign * nx * pull);
       magnets[index].y(sign * ny * pull);
@@ -187,12 +188,12 @@ const INTERACTIVE_SELECTOR = [
   '[role="button"]:not([aria-disabled="true"])',
   '[role="link"]',
   '[role="tab"]',
-  '[role="menuitem"]',
   ".button",
   ".nav-link",
   ".nav-cta",
-  ".icon-button",
   ".map-tab",
+  ".filter-tab",
+  ".console-tab",
   ".menu-toggle",
   ".lang-option",
   ".wordmark",
@@ -200,28 +201,22 @@ const INTERACTIVE_SELECTOR = [
   ".contact-link",
 ].join(",");
 
-function isInteractiveAt(x: number, y: number) {
-  const hit = document.elementFromPoint(x, y);
-  return Boolean(hit?.closest(INTERACTIVE_SELECTOR));
-}
-
 export function initSiteCursor() {
   const cursor = document.querySelector<HTMLElement>(".hero-cursor");
   const dot = document.querySelector<HTMLElement>(".hero-cursor-dot");
   if (!cursor || !dot) return;
 
-  document.documentElement.classList.add("hero-cursor-active");
-
   gsap.set(cursor, { autoAlpha: 0 });
   gsap.set(dot, { xPercent: -50, yPercent: -50 });
 
-  const dotX = gsap.quickTo(dot, "x", { duration: 0.14, ease: "power3.out" });
-  const dotY = gsap.quickTo(dot, "y", { duration: 0.14, ease: "power3.out" });
+  const dotX = gsap.quickTo(dot, "x", { duration: 0.16, ease: "power3.out" });
+  const dotY = gsap.quickTo(dot, "y", { duration: 0.16, ease: "power3.out" });
 
   let visible = false;
   let interactive = false;
   let pendingX = 0;
   let pendingY = 0;
+  let pendingTarget: EventTarget | null = null;
 
   const show = () => {
     if (visible || document.hidden) return;
@@ -248,13 +243,15 @@ export function initSiteCursor() {
     }
     dotX(pendingX);
     dotY(pendingY);
-    setInteractive(isInteractiveAt(pendingX, pendingY));
+    const el = pendingTarget instanceof Element ? pendingTarget : null;
+    setInteractive(Boolean(el?.closest(INTERACTIVE_SELECTOR)));
     show();
   });
 
   const onMove = (event: PointerEvent) => {
     pendingX = event.clientX;
     pendingY = event.clientY;
+    pendingTarget = event.target;
     flushCursor();
   };
 
@@ -264,6 +261,37 @@ export function initSiteCursor() {
   document.documentElement.addEventListener("pointerleave", onLeave);
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) hide();
+  });
+}
+
+export function initMagneticButtons() {
+  const buttons = document.querySelectorAll<HTMLElement>(
+    ".button-primary, .button-secondary",
+  );
+  buttons.forEach((btn) => {
+    const xTo = gsap.quickTo(btn, "x", { duration: 0.35, ease: "power2.out" });
+    const yTo = gsap.quickTo(btn, "y", { duration: 0.35, ease: "power2.out" });
+
+    btn.addEventListener(
+      "pointermove",
+      (e: PointerEvent) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - (rect.left + rect.width / 2)) * 0.18;
+        const y = (e.clientY - (rect.top + rect.height / 2)) * 0.18;
+        xTo(x);
+        yTo(y);
+      },
+      { passive: true },
+    );
+
+    btn.addEventListener("pointerleave", () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    });
   });
 }
 
@@ -292,6 +320,7 @@ export function initHeroLiquid() {
 
 if (!REDUCED_MOTION && FINE_POINTER) {
   initSiteCursor();
+  initMagneticButtons();
 }
 
 initHeroLiquid();
