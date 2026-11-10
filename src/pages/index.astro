@@ -4,6 +4,7 @@ import gixImg from "../assets/gix.png";
 import smartOfferImg from "../assets/smart-offer.png";
 import nequ3dImg from "../assets/nequ3d.png";
 import oentikeImg from "../assets/oentike.png";
+import firmlensImg from "../assets/firmlens.png";
 import honeypotImg from "../assets/honeypot.png";
 import sandSimulationImg from "../assets/sand-simulation.png";
 import gratsImg from "../assets/grats.png";
@@ -3398,11 +3399,35 @@ import gratImg from "../assets/grat.png";
 
             <article class="project-card reveal">
               <div class="project-media">
-                <Image src={honeypotImg} alt="Honeypot Raspberry Pi stack" loading="lazy" />
+                <Image src={firmlensImg} alt="FirmLens static security analysis dashboard" loading="lazy" />
               </div>
               <div class="project-content">
                 <div class="project-top">
                   <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 05</p>
+                  <h3>FirmLens</h3>
+                  <p class="project-summary" data-i18n="project.firmlens.summary">Deterministic static security analysis toolkit detecting hardcoded credentials, exposed keys, and unsafe configurations in IoT firmware.</p>
+                </div>
+                <dl class="project-facts">
+                  <div class="fact"><dt data-i18n="projects.role">Role</dt><dd data-i18n="project.firmlens.role">Security Engineering / Rust & Full-Stack</dd></div>
+                  <div class="fact"><dt data-i18n="projects.constraint">Constraint</dt><dd data-i18n="project.firmlens.constraint">Zero live execution and strict redaction-by-construction: secrets and cryptographic keys are never leaked in logs, reports, or UI.</dd></div>
+                  <div class="fact fact-wide"><dt data-i18n="projects.impact">Impact</dt><dd data-i18n="project.firmlens.impact">Combines a high-performance Rust core engine, sandboxed Binwalk v3 extraction, local Axum API, and a React dashboard mapped to OWASP IoT and ETSI EN 303 645.</dd></div>
+                </dl>
+                <div class="project-footer">
+                  <a class="project-link" href="https://github.com/Niutaq/FirmLens" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="projects.source">Source</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <Image src={honeypotImg} alt="Honeypot Raspberry Pi stack" loading="lazy" />
+              </div>
+              <div class="project-content">
+                <div class="project-top">
+                  <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 06</p>
                   <h3>Honeypot</h3>
                   <p class="project-summary" data-i18n="project.honeypot.summary">A Raspberry Pi honeypot stack collecting and visualizing attacks against exposed services for controlled academic scenarios.</p>
                 </div>
@@ -3426,7 +3451,7 @@ import gratImg from "../assets/grat.png";
               </div>
               <div class="project-content">
                 <div class="project-top">
-                  <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 06</p>
+                  <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 07</p>
                   <h3>Sand-Simulation</h3>
                   <p class="project-summary" data-i18n="project.sand.summary">Granular physics simulation focused on natural particle behavior and environmental interactions.</p>
                 </div>
@@ -3437,30 +3462,6 @@ import gratImg from "../assets/grat.png";
                 </dl>
                 <div class="project-footer">
                   <a class="project-link" href="https://github.com/Niutaq/Sand-Simulation" target="_blank" rel="noopener noreferrer">
-                    <span data-i18n="projects.source">Source</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <div class="project-media">
-                <Image src={gratsImg} alt="GRATS OpenGL renderer" loading="lazy" />
-              </div>
-              <div class="project-content">
-                <div class="project-top">
-                  <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 07</p>
-                  <h3>GRATS</h3>
-                  <p class="project-summary" data-i18n="project.grats.summary">Minimal graphics renderer built to explore OpenGL and graphics programming fundamentals.</p>
-                </div>
-                <dl class="project-facts">
-                  <div class="fact"><dt data-i18n="projects.role">Role</dt><dd data-i18n="project.grats.role">Low-level graphics programming</dd></div>
-                  <div class="fact"><dt data-i18n="projects.constraint">Constraint</dt><dd data-i18n="project.grats.constraint">A renderer requires understanding the graphics pipeline closer to hardware and API behavior, not only finished engines.</dd></div>
-                  <div class="fact fact-wide"><dt data-i18n="projects.impact">Impact</dt><dd data-i18n="project.grats.impact">Strengthens technical rendering knowledge that informs later asset, scene, and real-time performance decisions.</dd></div>
-                </dl>
-                <div class="project-footer">
-                  <a class="project-link" href="https://github.com/Niutaq/GRATS" target="_blank" rel="noopener noreferrer">
                     <span data-i18n="projects.source">Source</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
                   </a>
@@ -3485,6 +3486,30 @@ import gratImg from "../assets/grat.png";
                 </dl>
                 <div class="project-footer">
                   <a class="project-link" href="https://github.com/Niutaq/GRAT" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="projects.source">Source</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-media">
+                <Image src={gratsImg} alt="GRATS OpenGL renderer" loading="lazy" />
+              </div>
+              <div class="project-content">
+                <div class="project-top">
+                  <p class="eyebrow"><span data-i18n="projects.project">Project</span> / 09</p>
+                  <h3>GRATS</h3>
+                  <p class="project-summary" data-i18n="project.grats.summary">Minimal graphics renderer built to explore OpenGL and graphics programming fundamentals.</p>
+                </div>
+                <dl class="project-facts">
+                  <div class="fact"><dt data-i18n="projects.role">Role</dt><dd data-i18n="project.grats.role">Low-level graphics programming</dd></div>
+                  <div class="fact"><dt data-i18n="projects.constraint">Constraint</dt><dd data-i18n="project.grats.constraint">A renderer requires understanding the graphics pipeline closer to hardware and API behavior, not only finished engines.</dd></div>
+                  <div class="fact fact-wide"><dt data-i18n="projects.impact">Impact</dt><dd data-i18n="project.grats.impact">Strengthens technical rendering knowledge that informs later asset, scene, and real-time performance decisions.</dd></div>
+                </dl>
+                <div class="project-footer">
+                  <a class="project-link" href="https://github.com/Niutaq/GRATS" target="_blank" rel="noopener noreferrer">
                     <span data-i18n="projects.source">Source</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
                   </a>
@@ -3828,6 +3853,13 @@ import gratImg from "../assets/grat.png";
               "Building a reliable local condition scoring system with an offline-ready atlas and precise geolocation data processing.",
             "project.oentike.impact":
               "Delivers explainable condition scores and a 9-day season trend using Go, PostGIS, and an Astro UI with a Tauri desktop wrapper.",
+            "project.firmlens.summary":
+              "Deterministic static security analysis toolkit detecting hardcoded credentials, exposed keys, and unsafe configurations in IoT firmware.",
+            "project.firmlens.role": "Security Engineering / Rust & Full-Stack",
+            "project.firmlens.constraint":
+              "Zero live execution and strict redaction-by-construction: secrets and cryptographic keys are never leaked in logs, reports, or UI.",
+            "project.firmlens.impact":
+              "Combines a high-performance Rust core engine, sandboxed Binwalk v3 extraction, local Axum API, and a React dashboard mapped to OWASP IoT and ETSI EN 303 645.",
             "project.honeypot.summary":
               "A Raspberry Pi honeypot stack collecting and visualizing attacks against exposed services for controlled academic scenarios.",
             "project.honeypot.role": "Security / Operations",
@@ -4016,6 +4048,13 @@ import gratImg from "../assets/grat.png";
               "Zbudowanie niezawodnego lokalnego systemu oceny warunków z atlasem offline oraz precyzyjne przetwarzanie danych geolokalizacyjnych.",
             "project.oentike.impact":
               "Dostarcza wyjaśnialne oceny warunków i 9-dniowy trend sezonowy dzięki wykorzystaniu Go, PostGIS oraz UI w Astro opartym na Tauri.",
+            "project.firmlens.summary":
+              "Deterministyczny zestaw narzędzi do statycznej analizy bezpieczeństwa firmware'u IoT i SmartHome, wykrywający zahardkodowane poświadczenia, klucze i niebezpieczne konfiguracje.",
+            "project.firmlens.role": "Inżynieria bezpieczeństwa / Rust & Full-Stack",
+            "project.firmlens.constraint":
+              "Całkowity brak uruchamiania badanego firmware'u oraz zasada redaction-by-construction: poświadczenia i klucze prywatne nigdy nie trafiają do logów, raportów ani UI.",
+            "project.firmlens.impact":
+              "Łączy niezależny silnik w Rust, izolowaną ekstrakcję Binwalk v3, lokalne API w Axum oraz pulpit analityczny w React z mapowaniem na OWASP IoT i ETSI EN 303 645.",
             "project.honeypot.summary":
               "Środowisko honeypot na Raspberry Pi, zbierające i wizualizujące ataki na wystawione usługi dla celów akademickich.",
             "project.honeypot.role": "Bezpieczeństwo / Operacje",
@@ -4207,6 +4246,13 @@ import gratImg from "../assets/grat.png";
               "Aufbau eines zuverlässigen lokalen Bewertungssystems mit einem Offline-Atlas und präziser Verarbeitung von Geolokalisierungsdaten.",
             "project.oentike.impact":
               "Liefert nachvollziehbare Bedingungen und einen 9-Tage-Saisontrend mithilfe von Go, PostGIS und einer Astro-UI mit Tauri-Desktop-Wrapper.",
+            "project.firmlens.summary":
+              "Deterministisches Toolkit für statische Sicherheitsanalysen zur Erkennung von hardcodierten Anmeldedaten, Schlüsseln und unsicheren Konfigurationen in IoT-Firmware.",
+            "project.firmlens.role": "Security Engineering / Rust & Full-Stack",
+            "project.firmlens.constraint":
+              "Keine Live-Ausführung und striktes Redaction-by-Construction: Geheimnisse und Schlüssel gelangen niemals in Protokolle, Berichte oder die UI.",
+            "project.firmlens.impact":
+              "Kombiniert eine performante Rust-Core-Engine, isolierte Binwalk-v3-Extraktion, eine lokale Axum-API und ein React-Dashboard mit Zuordnung zu OWASP IoT und ETSI EN 303 645.",
             "project.honeypot.summary":
               "Ein Raspberry-Pi-Honeypot-Stack zum Sammeln und Visualisieren von Angriffen auf Dienste für akademische Szenarien.",
             "project.honeypot.role": "Sicherheit / Operations",

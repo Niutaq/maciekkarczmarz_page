@@ -116,6 +116,16 @@ export const translations = {
           "Dostarcza wyjaśnialne oceny warunków i 9-dniowy trend sezonowy dzięki wykorzystaniu Go, PostGIS oraz UI w Astro opartym na Tauri.",
         tech: ["Go", "PostGIS", "Tauri", "Astro", "Rust"],
       },
+      firmlens: {
+        title: "FirmLens",
+        role: "Inżynieria bezpieczeństwa / Rust & Full-Stack",
+        constraint:
+          "Całkowity brak uruchamiania badanego firmware'u oraz zasada redaction-by-construction: poświadczenia i klucze prywatne nigdy nie trafiają do logów, raportów ani UI.",
+        desc: "Deterministyczny zestaw narzędzi do statycznej analizy bezpieczeństwa firmware'u IoT i SmartHome, wykrywający zahardkodowane poświadczenia, klucze i niebezpieczne konfiguracje.",
+        impact:
+          "Łączy niezależny silnik w Rust, izolowaną ekstrakcję Binwalk v3, lokalne API w Axum oraz pulpit analityczny w React z mapowaniem na OWASP IoT i ETSI EN 303 645.",
+        tech: ["Rust", "Security", "IoT Firmware", "Axum", "React"],
+      },
       honeypot: {
         title: "Honeypot",
         role: "Bezpieczeństwo / Operacje",
@@ -343,6 +353,16 @@ export const translations = {
         impact:
           "Delivers explainable condition scores and a 9-day season trend using Go, PostGIS, and an Astro UI with a Tauri desktop wrapper.",
         tech: ["Go", "PostGIS", "Tauri", "Astro", "Rust"],
+      },
+      firmlens: {
+        title: "FirmLens",
+        role: "Security Engineering / Rust & Full-Stack",
+        constraint:
+          "Zero live execution and strict redaction-by-construction: secrets and cryptographic keys are never leaked in logs, reports, or UI.",
+        desc: "Deterministic static security analysis toolkit detecting hardcoded credentials, exposed keys, and unsafe configurations in IoT firmware.",
+        impact:
+          "Combines a high-performance Rust core engine, sandboxed Binwalk v3 extraction, local Axum API, and a React dashboard mapped to OWASP IoT and ETSI EN 303 645.",
+        tech: ["Rust", "Security", "IoT Firmware", "Axum", "React"],
       },
       honeypot: {
         title: "Honeypot",
